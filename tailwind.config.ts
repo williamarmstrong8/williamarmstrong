@@ -47,6 +47,20 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        nav: {
+          DEFAULT: "hsl(var(--nav-background))",
+          foreground: "hsl(var(--nav-foreground))",
+          active: "hsl(var(--nav-active))",
+          "active-foreground": "hsl(var(--nav-active-foreground))",
+        },
+        hero: {
+          DEFAULT: "hsl(var(--hero-background))",
+          foreground: "hsl(var(--hero-foreground))",
+        },
+        "project-card": {
+          DEFAULT: "hsl(var(--project-card))",
+          hover: "hsl(var(--project-card-hover))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
