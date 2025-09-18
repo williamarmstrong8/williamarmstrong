@@ -52,6 +52,7 @@ export default {
           foreground: "hsl(var(--nav-foreground))",
           active: "hsl(var(--nav-active))",
           "active-foreground": "hsl(var(--nav-active-foreground))",
+          border: "hsl(var(--nav-border))",
         },
         hero: {
           DEFAULT: "hsl(var(--hero-background))",
@@ -60,6 +61,7 @@ export default {
         "project-card": {
           DEFAULT: "hsl(var(--project-card))",
           hover: "hsl(var(--project-card-hover))",
+          border: "hsl(var(--project-card-border))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

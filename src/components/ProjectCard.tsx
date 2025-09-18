@@ -10,8 +10,9 @@ const ProjectCard = ({ title, className, size = "medium" }: ProjectCardProps) =>
   return (
     <div
       className={cn(
-        "bg-project-card rounded-3xl p-6 transition-all duration-300 ease-out hover:bg-project-card-hover hover:scale-[1.02] hover:shadow-lg cursor-pointer group",
+        "bg-project-card backdrop-blur-md border border-project-card-border rounded-3xl p-6 transition-all duration-300 ease-out hover:bg-project-card-hover hover:scale-[1.02] hover:shadow-lg cursor-pointer group",
         "flex items-end justify-start",
+        "shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]",
         className
       )}
     >
