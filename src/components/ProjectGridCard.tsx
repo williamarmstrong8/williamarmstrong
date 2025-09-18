@@ -5,16 +5,19 @@ interface ProjectGridCardProps {
   category?: string;
   description?: string;
   className?: string;
+  onClick?: () => void;
 }
 
 const ProjectGridCard = ({ 
   title, 
   category = "Project", 
   description = "Project description coming soon...",
-  className 
+  className,
+  onClick
 }: ProjectGridCardProps) => {
   return (
     <div
+      onClick={onClick}
       className={cn(
         "bg-card backdrop-blur-md border border-border rounded-2xl p-6 transition-all duration-300 ease-out hover:bg-accent/5 hover:scale-[1.02] hover:shadow-lg cursor-pointer group",
         "flex flex-col justify-between h-full min-h-[200px]",

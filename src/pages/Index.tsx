@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import BrandsSection from "@/components/BrandsSection";
+import AboutSection from "@/components/AboutSection";
+import ProjectsSection from "@/components/ProjectsSection";
 
 const Index = () => {
   return (
@@ -8,6 +10,8 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <BrandsSection />
+      <AboutSection />
+      <ProjectsSection />
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { cn } from "@/lib/utils";
 
 interface PhotoCardProps {
@@ -8,7 +9,7 @@ interface PhotoCardProps {
   onImageClick?: (imageSrc: string, title: string) => void;
 }
 
-const PhotoCard = ({ 
+const PhotoCard = memo(({ 
   title = "Photo", 
   aspectRatio = "square",
   className,
@@ -72,6 +73,8 @@ const PhotoCard = ({
       )}
     </div>
   );
-};
+});
+
+PhotoCard.displayName = "PhotoCard";
 
 export default PhotoCard;
