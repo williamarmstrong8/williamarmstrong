@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import AboutCard from "@/components/AboutCard";
 import Timeline from "@/components/Timeline";
@@ -103,68 +104,199 @@ const About = () => {
       
       <main className="px-20 pt-8 pb-16">
         {/* Page Title */}
-        <section className="text-center mb-16">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-none">
+        <motion.section 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 0.6, 
+            ease: [0.25, 0.46, 0.45, 0.94],
+            delay: 0.1
+          }}
+        >
+          <motion.h1 
+            className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-none"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ 
+              duration: 0.7, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              delay: 0.2
+            }}
+          >
             About Me
-          </h1>
-          <p className="text-xl text-muted-foreground mt-6 max-w-3xl mx-auto">
+          </motion.h1>
+          <motion.p 
+            className="text-xl text-muted-foreground mt-6 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.5, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              delay: 0.4
+            }}
+          >
             Engineer, entrepreneur, and leader passionate about building innovative solutions and creating positive impact.
-          </p>
-        </section>
+          </motion.p>
+        </motion.section>
 
         {/* About Cards */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <motion.section 
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ 
+            duration: 0.3,
+            delay: 0.6
+          }}
+        >
           {aboutCards.map((card, index) => (
-            <AboutCard
+            <motion.div
               key={index}
-              title={card.title}
-              description={card.description}
-              icon={card.icon}
-            />
+              initial={{ opacity: 0, y: 20, scale: 0.9 }}
+              animate={{ 
+                opacity: 1, 
+                y: 0, 
+                scale: 1,
+                transition: {
+                  duration: 0.4,
+                  delay: 0.7 + (index * 0.1),
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }
+              }}
+              whileHover={{ 
+                y: -4,
+                transition: { duration: 0.2 }
+              }}
+            >
+              <AboutCard
+                title={card.title}
+                description={card.description}
+                icon={card.icon}
+              />
+            </motion.div>
           ))}
-        </section>
+        </motion.section>
 
         {/* Timeline Sections */}
-        <div className="space-y-20">
+        <motion.div 
+          className="space-y-20"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ 
+            duration: 0.3,
+            delay: 1.0
+          }}
+        >
           {/* Education Timeline */}
-          <Timeline
-            title="Education"
-            icon={
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-            }
-            items={educationItems}
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.5, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              delay: 1.1
+            }}
+          >
+            <Timeline
+              title="Education"
+              icon={
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              }
+              items={educationItems}
+            />
+          </motion.div>
 
           {/* Experience Timeline */}
-          <Timeline
-            title="Experience"
-            icon={
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6" />
-              </svg>
-            }
-            items={experienceItems}
-          />
-        </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.5, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              delay: 1.3
+            }}
+          >
+            <Timeline
+              title="Experience"
+              icon={
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6" />
+                </svg>
+              }
+              items={experienceItems}
+            />
+          </motion.div>
+        </motion.div>
 
         {/* Call to Action */}
-        <section className="mt-20 text-center">
-          <div className="bg-card backdrop-blur-md border border-border rounded-3xl p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
+        <motion.section 
+          className="mt-20 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 0.5, 
+            ease: [0.25, 0.46, 0.45, 0.94],
+            delay: 1.5
+          }}
+        >
+          <motion.div 
+            className="bg-card backdrop-blur-md border border-border rounded-3xl p-12 max-w-4xl mx-auto"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ 
+              duration: 0.4, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              delay: 1.6
+            }}
+            whileHover={{ 
+              scale: 1.02,
+              transition: { duration: 0.2 }
+            }}
+          >
+            <motion.h2 
+              className="text-3xl font-bold text-foreground mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.4, 
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 1.7
+              }}
+            >
               Let's Work Together
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+            </motion.h2>
+            <motion.p 
+              className="text-muted-foreground mb-8 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.4, 
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 1.8
+              }}
+            >
               I'm always interested in new opportunities, collaborations, and meaningful projects. Let's connect and build something amazing together.
-            </p>
-            <Link to="/contact">
-              <button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-3 font-semibold transition-all duration-300 ease-out hover:scale-105">
-                Get In Touch
-              </button>
-            </Link>
-          </div>
-        </section>
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.4, 
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 1.9
+              }}
+            >
+              <Link to="/contact">
+                <button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-3 font-semibold transition-all duration-300 ease-out hover:scale-105">
+                  Get In Touch
+                </button>
+              </Link>
+            </motion.div>
+          </motion.div>
+        </motion.section>
       </main>
     </div>
   );

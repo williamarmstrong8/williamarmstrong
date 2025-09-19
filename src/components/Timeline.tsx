@@ -1,4 +1,6 @@
 import { cn } from "@/lib/utils";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 interface TimelineItem {
   title: string;
@@ -37,36 +39,65 @@ const Timeline = ({ title, icon, items, className }: TimelineProps) => {
         {/* Timeline Items */}
         <div className="space-y-12">
           {items.map((item, index) => (
-            <div key={index} className="relative flex items-start">
-              {/* Timeline Dot */}
-              <div className="absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-background z-10"></div>
-              
-              {/* Content */}
-              <div className="ml-16 bg-card backdrop-blur-md border border-border rounded-2xl p-6 w-full">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground mb-1">
-                      {item.title}
-                    </h3>
-                    {item.subtitle && (
-                      <p className="text-primary font-medium">
-                        {item.subtitle}
-                      </p>
-                    )}
-                  </div>
-                  <div className="text-primary font-medium text-sm md:text-base mt-2 md:mt-0">
-                    {item.date}
-                  </div>
-                </div>
-                <p className="text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            </div>
+            <TimelineItem key={index} item={item} index={index} />
           ))}
         </div>
       </div>
     </div>
+  );
+};
+
+// Individual Timeline Item Component with scroll animation
+const TimelineItem = ({ item, index }: { item: TimelineItem; index: number }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { 
+    once: true, 
+    margin: "-50px 0px" 
+  });
+
+  return (
+    <motion.div 
+      ref={ref}
+      className="relative flex items-start"
+      initial={{ opacity: 0, x: -30 }}
+      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+      transition={{ 
+        duration: 0.5, 
+        delay: index * 0.1,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }}
+    >
+      {/* Timeline Dot */}
+      <div className="absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-background z-10"></div>
+      
+      {/* Content */}
+      <motion.div 
+        className="ml-16 bg-card backdrop-blur-md border border-border rounded-2xl p-6 w-full"
+        whileHover={{ 
+          scale: 1.02,
+          transition: { duration: 0.2 }
+        }}
+      >
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+          <div>
+            <h3 className="text-xl font-bold text-foreground mb-1">
+              {item.title}
+            </h3>
+            {item.subtitle && (
+              <p className="text-primary font-medium">
+                {item.subtitle}
+              </p>
+            )}
+          </div>
+          <div className="text-primary font-medium text-sm md:text-base mt-2 md:mt-0">
+            {item.date}
+          </div>
+        </div>
+        <p className="text-muted-foreground leading-relaxed">
+          {item.description}
+        </p>
+      </motion.div>
+    </motion.div>
   );
 };
 
