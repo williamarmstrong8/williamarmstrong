@@ -9,6 +9,7 @@ interface ProjectGridCardProps {
   image?: string;
   className?: string;
   onClick?: () => void;
+  size?: "default" | "compact";
 }
 
 const ProjectGridCard = ({ 
@@ -18,7 +19,8 @@ const ProjectGridCard = ({
   date,
   image,
   className,
-  onClick
+  onClick,
+  size = "default"
 }: ProjectGridCardProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -28,14 +30,18 @@ const ProjectGridCard = ({
       onClick={onClick}
       className={cn(
         "bg-card backdrop-blur-md border border-border rounded-2xl overflow-hidden transition-all duration-300 ease-out hover:bg-accent/5 hover:scale-[1.02] hover:shadow-lg cursor-pointer group",
-        "flex flex-col h-full min-h-[540px]",
+        "flex flex-col h-full",
+        size === "compact" ? "min-h-[280px]" : "min-h-[540px]",
         "shadow-[0_2px_8px_hsl(222_47%_11%_/_0.06)]",
         className
       )}
     >
       {/* Image Section */}
       {image && (
-        <div className="relative h-72 overflow-hidden">
+        <div className={cn(
+          "relative overflow-hidden",
+          size === "compact" ? "h-32" : "h-72"
+        )}>
           {/* Loading placeholder */}
           {!imageLoaded && !imageError && (
             <div className="absolute inset-0 bg-gradient-to-br from-muted/30 to-muted/50 flex items-center justify-center">

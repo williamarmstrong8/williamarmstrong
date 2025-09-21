@@ -6,10 +6,19 @@ interface BrandCardProps {
   logo: string;
   description: string;
   category: string;
-  status: "Active" | "Launched" | "In Development";
+  status: "Active" | "Launched" | "In Beta";
   website?: string;
   founded?: string;
   className?: string;
+  onClick?: () => void;
+      metrics?: {
+        users?: string;
+        revenue?: string;
+        growth?: string;
+        partnerships?: string;
+        customLabel1?: string;
+        customLabel2?: string;
+      };
 }
 
 const BrandCard = ({ 
@@ -20,7 +29,9 @@ const BrandCard = ({
   status, 
   website, 
   founded,
-  className 
+  className,
+  onClick,
+  metrics
 }: BrandCardProps) => {
   const { theme } = useTheme();
 
@@ -30,7 +41,7 @@ const BrandCard = ({
         return "text-green-500";
       case "Launched":
         return "text-blue-500";
-      case "In Development":
+      case "In Beta":
         return "text-yellow-500";
       default:
         return "text-muted-foreground";
@@ -39,20 +50,21 @@ const BrandCard = ({
 
   return (
     <div
+      onClick={onClick}
       className={cn(
-        "bg-card backdrop-blur-md border border-border rounded-3xl p-8 transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg cursor-pointer group",
-        "flex flex-col justify-between h-full min-h-[400px]",
+        "bg-card backdrop-blur-md border border-border rounded-3xl p-6 transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg cursor-pointer group",
+        "flex flex-col justify-between h-full min-h-[320px]",
         "shadow-[0_8px_32px_0_rgba(0,0,0,0.15)] dark:shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]",
         className
       )}
     >
       {/* Header with logo and status */}
-      <div className="flex items-start justify-between mb-6">
-        <div className="flex items-center space-x-4">
+      <div className="flex items-start justify-between mb-4">
+        <div className="flex items-center space-x-3">
           <img
             src={logo}
             alt={`${name} logo`}
-            className="w-16 h-16 object-contain"
+            className="w-12 h-12 object-contain"
             style={{ 
               filter: name === 'Happy Mile Run Club' || name === 'ClubPack'
                 ? 'none' // Keep original colors for HappyMile and ClubPack
@@ -66,20 +78,20 @@ const BrandCard = ({
             }}
           />
           <div>
-            <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+            <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
               {name}
             </h3>
-            <p className="text-sm text-muted-foreground uppercase tracking-wide">
+            <p className="text-xs text-muted-foreground uppercase tracking-wide">
               {category}
             </p>
           </div>
         </div>
-        <div className="flex flex-col items-end space-y-2">
+        <div className="flex flex-col items-end space-y-1">
           <span className={cn("text-xs font-medium px-2 py-1 rounded-full", getStatusColor(status))}>
             {status}
           </span>
           {founded && (
-            <span className="text-xs text-muted-foreground">
+            <span className="text-xs text-muted-foreground px-2">
               Founded {founded}
             </span>
           )}
@@ -87,14 +99,34 @@ const BrandCard = ({
       </div>
 
       {/* Description */}
-      <div className="flex-1 mb-6">
-        <p className="text-muted-foreground leading-relaxed">
+      <div className="flex-1 mb-4">
+        <p className="text-muted-foreground leading-relaxed text-base">
           {description}
         </p>
       </div>
 
+      {/* Metrics */}
+      {metrics && (
+        <div className="mb-4">
+          <div className="flex gap-3">
+            {metrics.users && (
+              <div className="flex-1 bg-muted/50 dark:bg-muted/50 rounded-lg p-3 text-center">
+                <div className="text-lg font-bold text-foreground">{metrics.users}</div>
+                <div className="text-xs text-muted-foreground">{metrics.customLabel1 || "Users"}</div>
+              </div>
+            )}
+            {metrics.revenue && (
+              <div className="flex-1 bg-muted/50 dark:bg-muted/50 rounded-lg p-3 text-center">
+                <div className="text-lg font-bold text-foreground">{metrics.revenue}</div>
+                <div className="text-xs text-muted-foreground">{metrics.customLabel2 || (metrics.revenue.includes('$') ? "Revenue" : "Status")}</div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* Footer with website link */}
-      <div className="pt-6 border-t border-border/50">
+      <div className="pt-4 border-t border-border/50">
         <div className="flex items-center justify-between">
           {website ? (
             <a 

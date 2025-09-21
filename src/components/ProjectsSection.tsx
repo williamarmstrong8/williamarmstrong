@@ -1,32 +1,34 @@
 import ProjectGridCard from "./ProjectGridCard";
+import { useNavigate } from "react-router-dom";
 
 const ProjectsSection = () => {
+  const navigate = useNavigate();
 
-  // Featured projects for the home page - simplified for overview
+  // Featured projects for the home page - 4 most recent projects in chronological order
   const featuredProjects = [
     {
       id: 1,
+      title: "PWS Refrigeration System",
+      category: "Engineering",
+      description: "Advanced refrigeration system design with energy efficiency and smart controls."
+    },
+    {
+      id: 2,
+      title: "Waste Management and Sorting System",
+      category: "Engineering",
+      description: "Conveyor system prototype designed to improve cafeteria traffic and reduce food waste through automated sorting."
+    },
+    {
+      id: 3,
       title: "Architecture Design",
       category: "Design",
       description: "Architectural design project showcasing innovative building concepts and spatial planning."
     },
     {
-      id: 2,
-      title: "Projector System",
-      category: "Engineering",
-      description: "Advanced projector system design with precision optics and mechanical engineering."
-    },
-    {
-      id: 3,
+      id: 4,
       title: "Prosthetic Exoskeleton",
       category: "Engineering",
       description: "Innovative prosthetic exoskeleton design for enhanced mobility and functionality."
-    },
-    {
-      id: 4,
-      title: "Skateboard Design",
-      category: "Design",
-      description: "Custom skateboard design project featuring innovative materials and ergonomic shapes."
     }
   ];
 
@@ -48,6 +50,8 @@ const ProjectsSection = () => {
               title={project.title}
               category={project.category}
               description={project.description}
+              size="compact"
+              onClick={() => navigate("/projects")}
             />
           ))}
         </div>

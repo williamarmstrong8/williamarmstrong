@@ -1,4 +1,6 @@
 import ProjectCard from "./ProjectCard";
+import AppIconCard from "./AppIconCard";
+import FeaturedProjectsCard from "./FeaturedProjectsCard";
 
 const HeroSection = () => {
   return (
@@ -9,29 +11,28 @@ const HeroSection = () => {
         </h2>
       </section>
 
-      <section className="grid grid-cols-4 gap-4 h-[550px] mb-0">
-        <div className="col-span-1">
-          <ProjectCard 
-            title="Featured Project" 
-            className="w-full h-full"
-            size="medium"
-          />
+      <section className="grid gap-4 h-[550px] mb-0" style={{gridTemplateColumns: "0.8fr auto 1.2fr"}}>
+        <div className="h-full min-w-0">
+          <FeaturedProjectsCard />
         </div>
         
-        <div className="col-span-1 grid grid-rows-2 gap-4">
-          <ProjectCard 
-            title="Project Two" 
-            className="w-full h-full"
-            size="small"
-          />
-          <ProjectCard 
-            title="Project Three" 
-            className="w-full h-full"
-            size="small"
-          />
+        <div className="grid grid-rows-2 gap-4 h-full" style={{width: "275px"}}>
+          <div className="aspect-square">
+            <AppIconCard 
+              className="w-full h-full"
+              size="small"
+            />
+          </div>
+          <div className="aspect-square">
+            <ProjectCard 
+              title="Project Three" 
+              className="w-full h-full"
+              size="small"
+            />
+          </div>
         </div>
         
-        <div className="col-span-2">
+        <div className="h-full min-w-0">
           <ProjectCard 
             title="Project Four" 
             className="w-full h-full"
