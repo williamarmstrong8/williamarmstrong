@@ -40,9 +40,9 @@ const About = () => {
   const educationItems = [
     {
       title: "Boston College",
-      subtitle: "Bachelor's in Human-Centered Engineering",
-      date: "2022 — Present",
-      description: "Pursuing a Bachelor's degree in Human-Centered Engineering with a minor in General Business. Boston College emphasizes a Jesuit education, blending rigorous academics with social responsibility and community impact."
+      subtitle: "Bachelor of Science in Human-Centered Engineering, Minor in General Business",
+      date: "August 2022 — May 2026",
+      description: "Relevant courses include Machine Learning & Statistical Data Analysis, Computation and Programming, Circuits, Physical Modeling and Lab Analysis, Statics and Mechanics, Marketing, Engineering for Society, and Thermodynamics. Emphasizing Jesuit education blending rigorous academics with social responsibility and community impact."
     },
     {
       title: "Saint Ignatius College Preparatory",
@@ -55,28 +55,22 @@ const About = () => {
   // Experience timeline data
   const experienceItems = [
     {
-      title: "Happy Mile Run Club",
-      subtitle: "Founder & Organizer",
-      date: "May 2024 – Present",
-      description: "Partnered with Nike for product testing while growing a 3,000+ member running club. Secured strategic partnerships, organized weekly events, and reached 500,000+ accounts monthly through social media."
+      title: "AdviserGPT",
+      subtitle: "Intern, Client Onboarding & Product Support",
+      date: "May 2025 – Present",
+      description: "Building an AI content generation tool to boost SEO and visibility, while supporting onboarding and integration of AI solutions and creating demo content in Adobe Suite to enhance client engagement."
     },
     {
-      title: "Mayor Mark Farrell Campaign",
+      title: "Mark Farrell for Mayor Campaign",
       subtitle: "Intern/Fellow Team Lead",
       date: "May 2024 – August 2024",
-      description: "Managed and led a team of 60+ interns for canvassing efforts and voter outreach. Developed an algorithm to optimize door and phone banking distribution, onboarded new interns, and facilitated team communication."
+      description: "Led and trained a 60+ person intern team, managing schedules and optimizing distribution to increase weekly canvassing numbers by 30% across San Francisco."
     },
     {
       title: "Orangetheory Fitness",
       subtitle: "Lead Sales Associate",
       date: "June 2023 – August 2023",
       description: "Onboarded 20+ new members in one summer through targeted outreach and sales pitches. Spearheaded sales initiatives, conducted fitness assessments, tailored packages, and collaborated with associates to achieve team targets."
-    },
-    {
-      title: "Destination Drifters",
-      subtitle: "Founder & CEO",
-      date: "August 2022 – Present",
-      description: "Launched and grew a global travel blog and merchandise brand, sharing authentic study abroad experiences, travel tips, and adventure-inspired apparel to connect and inspire adventurers worldwide."
     },
     {
       title: "Nike Soccer Camp",
@@ -88,13 +82,45 @@ const About = () => {
       title: "Vanderbilt, Prosthetic Exo-Skeleton",
       subtitle: "Mechanical Engineer Intern",
       date: "June 2021 – August 2021",
-      description: "Led the design and prototyping of a prosthetic exoskeleton, applying engineering principles from concept to production. Conducted mechanical testing and validation, ensuring precision and reliability in the final product."
+      description: "Designed, prototyped, and tested a prosthetic exoskeleton using EMG-controlled motors, aiding in up to 10 lbs of lifting force to support improved mobility for individuals with disabilities."
     },
     {
       title: "Mark Cavagnero Associates",
       subtitle: "Architecture Intern",
       date: "June 2021 – August 2021",
       description: "Collaborated with architects in design discussions and client meetings. Used CAD and 3D printing to create a 3D model of a school's remodeling plans. Learned professional practices, emphasizing timelines, and client communication."
+    }
+  ];
+
+  // Projects timeline data
+  const projectsItems = [
+    {
+      title: "AI Blog Generator",
+      subtitle: "OpenAI-Powered Content Generation Tool",
+      date: "May 2025 - July 2025",
+      description: "Developed an OpenAI-powered content generation tool that produces professional, SEO-optimized blog posts to increase online visibility and drive organic traffic for businesses."
+    },
+    {
+      title: "Machine Learning for Water Quality Classification",
+      subtitle: "Boston College Academic Project",
+      date: "August 2024 – December 2024",
+      description: "Built machine learning models (decision tree, kNN, Naive Bayes, SVM) achieving 90% accuracy in predicting water potability, improving monitoring capabilities and supporting targeted public health interventions."
+    }
+  ];
+
+  // Entrepreneur/Club activities data
+  const entrepreneurItems = [
+    {
+      title: "Soaring Startup Circle Venture",
+      subtitle: "Senior Analyst",
+      date: "August 2024 – Present",
+      description: "Provided leadership and organization to the prototyping team, helping build business ideas and brands from concept to funding, supporting Boston College startups through strategic guidance and innovative prototype development."
+    },
+    {
+      title: "West End House Boys and Girls Club",
+      subtitle: "Volunteer",
+      date: "August 2023 – June 2024",
+      description: "Inspired the youth in our after-school program at West End House, harnessing shared interests to create a dynamic learning community while incorporating in-class lessons on Philosophy and Theology."
     }
   ];
 
@@ -140,6 +166,7 @@ const About = () => {
           </motion.p>
         </motion.section>
 
+
         {/* About Cards */}
         <motion.section 
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
@@ -178,6 +205,7 @@ const About = () => {
           ))}
         </motion.section>
 
+
         {/* Timeline Sections */}
         <motion.div 
           className="space-y-20"
@@ -185,7 +213,7 @@ const About = () => {
           animate={{ opacity: 1 }}
           transition={{ 
             duration: 0.3,
-            delay: 1.0
+            delay: 0.9
           }}
         >
           {/* Education Timeline */}
@@ -195,7 +223,7 @@ const About = () => {
             transition={{ 
               duration: 0.5, 
               ease: [0.25, 0.46, 0.45, 0.94],
-              delay: 1.1
+              delay: 1.0
             }}
           >
             <Timeline
@@ -216,7 +244,7 @@ const About = () => {
             transition={{ 
               duration: 0.5, 
               ease: [0.25, 0.46, 0.45, 0.94],
-              delay: 1.3
+              delay: 1.2
             }}
           >
             <Timeline
@@ -229,6 +257,48 @@ const About = () => {
               items={experienceItems}
             />
           </motion.div>
+
+          {/* Projects Timeline */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.5, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              delay: 1.4
+            }}
+          >
+            <Timeline
+              title="Key Projects"
+              icon={
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              }
+              items={projectsItems}
+            />
+          </motion.div>
+
+          {/* Entrepreneur/Leadership Timeline */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.5, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              delay: 1.6
+            }}
+          >
+            <Timeline
+              title="Leadership & Service"
+              icon={
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              }
+              items={entrepreneurItems}
+            />
+          </motion.div>
         </motion.div>
 
         {/* Call to Action */}
@@ -239,7 +309,7 @@ const About = () => {
           transition={{ 
             duration: 0.5, 
             ease: [0.25, 0.46, 0.45, 0.94],
-            delay: 1.5
+            delay: 1.8
           }}
         >
           <motion.div 
@@ -249,7 +319,7 @@ const About = () => {
             transition={{ 
               duration: 0.4, 
               ease: [0.25, 0.46, 0.45, 0.94],
-              delay: 1.6
+              delay: 1.9
             }}
             whileHover={{ 
               scale: 1.02,
@@ -263,7 +333,7 @@ const About = () => {
               transition={{ 
                 duration: 0.4, 
                 ease: [0.25, 0.46, 0.45, 0.94],
-                delay: 1.7
+                delay: 2.0
               }}
             >
               Let's Work Together
@@ -275,7 +345,7 @@ const About = () => {
               transition={{ 
                 duration: 0.4, 
                 ease: [0.25, 0.46, 0.45, 0.94],
-                delay: 1.8
+                delay: 2.1
               }}
             >
               I'm always interested in new opportunities, collaborations, and meaningful projects. Let's connect and build something amazing together.
@@ -286,7 +356,7 @@ const About = () => {
               transition={{ 
                 duration: 0.4, 
                 ease: [0.25, 0.46, 0.45, 0.94],
-                delay: 1.9
+                delay: 2.2
               }}
             >
               <Link to="/contact">
