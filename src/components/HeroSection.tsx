@@ -37,6 +37,7 @@ const HeroSection = () => {
             title="Project Four" 
             className="w-full h-full"
             size="large"
+            image="/ui-apps.jpg"
           />
         </div>
       </section>

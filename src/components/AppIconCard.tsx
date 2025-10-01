@@ -19,15 +19,11 @@ const AppIconCard = ({ className, size = "medium" }: AppIconCardProps) => {
     <Link to="/brands">
       <motion.div
         className={cn(
-          "bg-project-card backdrop-blur-md border border-project-card-border rounded-3xl p-6 transition-all duration-500 ease-out hover:bg-project-card-hover hover:scale-[1.02] hover:shadow-2xl cursor-pointer group relative overflow-hidden",
+          "bg-project-card backdrop-blur-md border border-project-card-border rounded-3xl p-6 transition-all duration-500 ease-out cursor-pointer relative overflow-hidden",
           "flex flex-col items-center justify-center",
           "shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]",
           className
         )}
-        whileHover={{ 
-          y: -2,
-          transition: { duration: 0.3 }
-        }}
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ 
@@ -42,13 +38,13 @@ const AppIconCard = ({ className, size = "medium" }: AppIconCardProps) => {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       {/* App Icons Grid - Modern Design */}
       <div className={cn(
-        "grid w-full h-full gap-3",
+        "grid w-full h-full gap-3 relative z-10",
         size === "large" ? "grid-cols-2" : "grid-cols-2"
       )}>
         {brandLogos.map((brand, index) => (
           <motion.div
             key={brand.name}
-            className="relative bg-white rounded-2xl overflow-hidden transition-all duration-500 group/icon shadow-lg hover:shadow-2xl border border-gray-100"
+            className="relative bg-white rounded-2xl overflow-hidden transition-all duration-200 shadow-md hover:shadow-2xl border border-gray-100 hover:border-gray-300 cursor-pointer"
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ 
@@ -57,12 +53,12 @@ const AppIconCard = ({ className, size = "medium" }: AppIconCardProps) => {
               ease: [0.25, 0.46, 0.45, 0.94]
             }}
             whileHover={{ 
-              scale: 1.02,
-              transition: { duration: 0.2 }
+              scale: 1.05,
+              y: -3,
+              transition: { duration: 0.2, ease: "easeOut" }
             }}
             style={{
-              background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.1)'
+              background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)'
             }}
           >
             {/* Subtle gradient overlay */}
@@ -70,20 +66,10 @@ const AppIconCard = ({ className, size = "medium" }: AppIconCardProps) => {
             
             {/* Icon content */}
             <div className="relative w-full h-full flex items-center justify-center p-3">
-              <motion.img 
+              <img 
                 src={brand.logo} 
                 alt={`${brand.name} logo`}
-                className="w-full h-full object-contain transition-all duration-500 filter drop-shadow-sm"
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1 }}
-                transition={{ 
-                  duration: 0.4,
-                  delay: 0.3 + (index * 0.1)
-                }}
-                whileHover={{ 
-                  scale: 1.05,
-                  transition: { duration: 0.2 }
-                }}
+                className="w-full h-full object-contain transition-all duration-300 filter drop-shadow-sm group-hover/icon:drop-shadow-lg group-hover/icon:scale-110"
               />
             </div>
 

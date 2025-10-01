@@ -40,7 +40,7 @@ const FeaturedProjectsCard = () => {
   return (
     <motion.div
       className={cn(
-        "bg-project-card backdrop-blur-md border border-project-card-border rounded-3xl px-6 pt-6 pb-3 transition-all duration-300 ease-out hover:bg-project-card-hover hover:scale-[1.02] hover:shadow-lg cursor-pointer group",
+        "bg-project-card backdrop-blur-md border border-project-card-border rounded-3xl px-6 pt-6 pb-3 transition-all duration-300 ease-out group",
         "flex flex-col justify-between h-full",
         "shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]"
       )}
@@ -64,7 +64,7 @@ const FeaturedProjectsCard = () => {
               key={index}
               onClick={() => navigate('/projects')}
               className={cn(
-                "flex items-center space-x-3 py-2.5 px-3 rounded-xl bg-card/60 backdrop-blur-sm border border-border/40 transition-all duration-300 cursor-pointer",
+                "flex items-center space-x-3 py-2.5 px-3 rounded-xl bg-card/60 backdrop-blur-sm border border-border/40 transition-all duration-300 cursor-pointer group/item",
                 index === projects.length - 1 && "mb-0"
               )}
               initial={{ opacity: 0, x: -20 }}
@@ -93,6 +93,20 @@ const FeaturedProjectsCard = () => {
                 </p>
               </div>
 
+              {/* Arrow indicator */}
+              <div className="opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                <svg 
+                  width="16" 
+                  height="16" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2"
+                  className="text-muted-foreground"
+                >
+                  <path d="m9 18 6-6-6-6"/>
+                </svg>
+              </div>
             </motion.div>
           ))}
         </div>
