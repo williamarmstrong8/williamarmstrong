@@ -8,7 +8,7 @@ interface ProjectFilterProps {
 }
 
 const ProjectFilter = ({ activeFilter, onFilterChange, className }: ProjectFilterProps) => {
-  const filters = ["All", "Engineering", "Design", "Passion"];
+  const filters = ["All", "Engineering", "UI/UX", "Passion"];
 
   return (
     <div className={cn("flex items-center", className)}>

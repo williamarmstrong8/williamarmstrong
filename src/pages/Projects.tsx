@@ -13,11 +13,57 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "Proof - Social Health Tracker",
+      category: "UI/UX",
+      date: "December 2024",
+      description: "Social media app concept that gamifies health challenges through photo-based task tracking and social accountability, featuring a working prototype built with Flutter.",
+      longDescription: "Proof is a social media app concept I developed to address the challenge of maintaining accountability in health and wellness goals. The app gamifies health challenges by requiring users to post photos as proof of completing tasks, which are then shared in a social feed for friends to see and provide encouragement. This creates a system of social accountability that motivates users to stay consistent with their health goals. The project presented a great UI/UX challenge, requiring me to design an intuitive interface that balances social features with privacy considerations. I used Figma for design mockups and prototyping, then built a working prototype using Cursor and Flutter. The app addresses the common problem of people starting health challenges but losing motivation without accountability, providing a solution that combines social connection with goal achievement.",
+      images: [
+        "/projects/proof/Untitled design.jpg",
+        "/projects/proof/Proof of Productive Habits.png",
+        "/projects/proof/ChatGPT Image Sep 30, 2025, 01_02_46 PM.png"
+      ],
+      technologies: ["Figma", "Flutter", "Cursor", "UI/UX Design", "App Development", "Social Media Design"],
+      features: [
+        "Photo-based task verification system",
+        "Social feed for accountability and motivation",
+        "Gamification of health challenges",
+        "Intuitive UI/UX design for mobile app",
+        "Working Flutter prototype development",
+        "Social accountability features",
+        "Health challenge integration",
+        "Privacy-conscious social sharing"
+      ]
+    },
+    {
+      id: 2,
+      title: "Happy Mile - Run Club App",
+      category: "UI/UX",
+      date: "November 2024",
+      description: "Modern UI/UX redesign of my run club with an innovative app concept featuring contemporary design principles and user-centered interface development.",
+      longDescription: "Happy Mile represents a comprehensive redesign of my run club through modern UI/UX principles. This project involved creating an innovative app concept that reimagines how running communities connect and engage. I focused on developing a contemporary interface that prioritizes user experience while maintaining the social and motivational aspects that make running clubs successful. The design incorporates modern UI patterns, intuitive navigation, and engaging visual elements that encourage community participation and goal achievement. This project showcases my ability to apply current design trends and user-centered design principles to create meaningful digital experiences for fitness communities.",
+      images: [
+        "/projects/happy mile/Untitled design (1).jpg"
+      ],
+      technologies: ["Figma", "Canva", "UI/UX Design", "Modern Design Principles", "App Design", "User-Centered Design"],
+      features: [
+        "Modern UI/UX redesign and app concept",
+        "Contemporary design principles implementation",
+        "User-centered interface development",
+        "Community engagement features",
+        "Intuitive navigation and user flow",
+        "Social running platform design",
+        "Motivational and goal-setting interfaces",
+        "Mobile-first responsive design approach"
+      ]
+    },
+    {
+      id: 3,
       title: "PWS Refrigeration System",
       category: "Engineering",
       date: "September 2024",
-      description: "Advanced refrigeration system design with energy efficiency and smart controls.",
-      longDescription: "An advanced refrigeration system project that focuses on energy efficiency, smart control systems, and sustainable cooling solutions. The project demonstrates expertise in thermal engineering and modern refrigeration technology.",
+      description: "Human-centered engineering project developing a smart refrigeration system for individuals with Prader-Willi Syndrome to promote independence and safety.",
+      longDescription: "This human-centered engineering project focused on developing a specialized refrigeration system for individuals with Prader-Willi Syndrome (PWS), a condition where individuals cannot regulate hunger. Through extensive collaboration with PWS facilities and multiple site visits, our team gained deep understanding of the unique challenges faced by individuals with PWS. Working on the electronics team, I contributed to the design using CAD software, Arduino programming, electronics integration, PCB specification, circuit design, and more. The beta prototype we developed addresses a critical need, allowing individuals with PWS to be more independent and live alone for longer periods while maintaining their safety and well-being.",
       images: [
         "/projects/PWS-fridge/pws1.jpg",
         "/projects/PWS-fridge/pws2.jpg",
@@ -27,47 +73,51 @@ const Projects = () => {
         "/projects/PWS-fridge/pws6.jpg",
         "/projects/PWS-fridge/pws7.jpg"
       ],
-      technologies: ["SolidWorks", "Thermal Analysis Software", "PLC Programming", "IoT Sensors"],
+      technologies: ["CAD Software", "Arduino", "Electronics", "PCB Design", "Circuit Design", "Human-Centered Design"],
       features: [
-        "Thermal system design and optimization",
-        "Energy efficiency improvements",
-        "Smart control and monitoring",
-        "Component selection and integration",
-        "Performance testing and validation",
-        "Maintenance and serviceability"
+        "Human-centered design approach with stakeholder collaboration",
+        "Site visits and user research with PWS facilities",
+        "Electronics system design and integration",
+        "Arduino programming and control systems",
+        "PCB specification and circuit design",
+        "Beta prototype development and testing",
+        "Promotes independence for individuals with PWS",
+        "Addresses critical safety and accessibility needs"
       ]
     },
     {
-      id: 2,
+      id: 4,
       title: "Waste Management and Sorting System",
       category: "Engineering",
       date: "March 2022",
-      description: "Conveyor system prototype designed to improve cafeteria traffic and reduce food waste through automated sorting.",
-      longDescription: "Faced with the chaos of long cafeteria lines and the sheer amount of food that ended up in the trash, our team dove headfirst into a one-week project to create a functional food sorting system prototype for our school. We had a dual mission: improve cafeteria traffic and slash food waste. In addition, we had to get ready to pitch our idea to potential investors who would assess not just our prototype, but also our presentation and marketing skills.",
+      description: "Redesigned Boston College's waste system with an automated conveyor system that sorts trash, compost, and recycling to improve accessibility and user experience.",
+      longDescription: "This project focused on redesigning Boston College's waste management system to make it more accessible and user-friendly. Our team was tasked with designing a solution that considered business partners and funding opportunities. We developed a conveyor system prototype that could automatically sort trash, compost, and recycling materials. The project emphasized both technical innovation and business development, as we worked with mock partners and presented our design at a business fair. Using DC motors, circuits, Arduino programming, and C++, we created a functional prototype that demonstrated the potential for improved waste management on campus while showcasing our ability to bridge engineering solutions with business partnerships.",
       images: [
-        "/projects/conveyor/conveyer1.jpg"
+        "/projects/conveyor/conveyor1.jpg"
       ],
       videos: [
         "/projects/conveyor/IMG_4890.MOV",
         "/projects/conveyor/IMG_4885.MOV"
       ],
-      technologies: ["Conveyor Systems", "Automation", "Prototyping", "Systems Engineering"],
+      technologies: ["DC Motors", "Arduino", "C++", "Circuit Design", "Human-Centered Design", "Business Engineering"],
       features: [
-        "Automated food sorting mechanism",
-        "Cafeteria traffic optimization",
-        "Food waste reduction system",
-        "Rapid prototyping and testing",
-        "Investor presentation preparation",
-        "Marketing and pitch development"
+        "Automated waste sorting system (trash, compost, recycling)",
+        "Conveyor system design and implementation",
+        "DC motor control and circuit integration",
+        "Arduino programming and C++ development",
+        "Human-centered design approach",
+        "Business partnership development",
+        "Mock partner collaboration and presentations",
+        "Business fair presentation and pitch development"
       ]
     },
     {
-      id: 3,
+      id: 5,
       title: "Architecture Design",
-      category: "Design",
+      category: "Engineering",
       date: "June 2021",
-      description: "Architectural design project showcasing innovative building concepts and spatial planning.",
-      longDescription: "A comprehensive architectural design project that explores innovative building concepts, spatial relationships, and sustainable design principles. The project demonstrates expertise in creating functional and aesthetically pleasing spaces that respond to user needs and environmental considerations.",
+      description: "Developed physical 3D models for Mark Cavagnero Associates using cutting-edge 3D printing technology to bring virtual architectural designs to life for client presentations.",
+      longDescription: "This project involved working with the prestigious architecture firm Mark Cavagnero Associates to create physical 3D models using cutting-edge 3D printing technology. I analyzed architectural designs from Rhino, Revit, and SketchUp along with architectural drawings and paperwork to convert their virtual models into tangible 3D designs. The complete design was built at a 1:2000 scale and featured a modular system that allowed architects, partners, contractors, and clients to visualize floor layouts and designs. The system included different proposal options that could be easily substituted. The final design was presented to clients, enabling them to see and interact with the architectural designs in real life. Throughout this project, I collaborated with architects, conducted site visits to observe projects, and worked with business partners, designers, and contractors using OnShape for 3D design.",
       images: [
         "/projects/architecture/SI1.jpg",
         "/projects/architecture/SI2.jpg",
@@ -76,24 +126,26 @@ const Projects = () => {
         "/projects/architecture/SI5.jpg",
         "/projects/architecture/SI6.jpg"
       ],
-      technologies: ["AutoCAD", "SketchUp", "Revit", "Adobe Creative Suite"],
+      technologies: ["OnShape", "Rhino", "Revit", "SketchUp", "3D Printing", "Architectural Modeling"],
       features: [
-        "3D modeling and visualization",
-        "Technical drawings and blueprints",
-        "Sustainable design principles",
-        "Space planning and optimization",
-        "Material selection and specification",
-        "Client presentation and documentation"
+        "3D model conversion from multiple CAD platforms",
+        "Physical model creation at 1:2000 scale",
+        "Modular design system for flexibility",
+        "Multiple proposal integration capability",
+        "Client presentation and visualization",
+        "Cross-platform software integration",
+        "Site visit coordination and analysis",
+        "Multi-stakeholder collaboration (architects, contractors, clients)"
       ],
       link: "https://www.cavagnero.com/project/st-ignatius/#project-type=featured"
     },
     {
-      id: 4,
+      id: 6,
       title: "Prosthetic Exoskeleton",
       category: "Engineering",
       date: "June 2021",
-      description: "Innovative prosthetic exoskeleton design for enhanced mobility and functionality.",
-      longDescription: "A groundbreaking prosthetic exoskeleton project that combines biomedical engineering, robotics, and human factors design. The project focuses on creating assistive technology that enhances mobility and independence for users with mobility challenges.",
+      description: "Engineered a working prosthetic exoskeleton prototype with Vanderbilt University professors, utilizing EMG signals to control DC motor movement for enhanced mobility assistance.",
+      longDescription: "This project stands out as a testament to my skills and passion for engineering. During the summer of my junior year in high school, I engineered a prosthetic exoskeleton in collaboration with engineering professors from Vanderbilt University. We successfully developed a working prototype that utilized signals from EMG modules to control the exoskeleton's movement. I sought mentorship from professors nationwide, combining STEM expertise with engineering guidance to develop this innovative prosthetic exoskeleton alongside Vanderbilt faculty and students. The project involved implementing EMG sensors to enable precise control of a robust DC motor, significantly enhancing the functionality and usability of the exoskeleton. This experience provided invaluable mentorship and guidance from university-level engineering professionals while contributing to assistive technology development.",
       images: [
         "/projects/prosthetic-exo/prosthetic1.jpg",
         "/projects/prosthetic-exo/prosthetic1.1.jpg",
@@ -101,23 +153,25 @@ const Projects = () => {
         "/projects/prosthetic-exo/prosthetic3.jpg",
         "/projects/prosthetic-exo/prosthetic4.jpg"
       ],
-      technologies: ["SolidWorks", "Arduino", "3D Printing", "Biomedical Sensors"],
+      technologies: ["EMG Sensors", "DC Motors", "Control Systems", "Biomedical Engineering", "Signal Processing"],
       features: [
-        "Biomechanical analysis and design",
-        "Actuator and sensor integration",
-        "User interface and control systems",
-        "Ergonomic design optimization",
-        "Prototype testing and validation",
-        "Clinical trial preparation"
+        "EMG signal processing and control implementation",
+        "DC motor control and movement coordination",
+        "University-level collaboration and mentorship",
+        "Working prototype development and testing",
+        "Biomedical engineering principles application",
+        "Assistive technology innovation",
+        "Cross-institutional project coordination",
+        "Advanced engineering mentorship integration"
       ]
     },
     {
-      id: 5,
-      title: "Table Design",
-      category: "Design",
+      id: 7,
+      title: "Sustainable Upcycled Tables",
+      category: "Passion",
       date: "November 2020",
-      description: "Innovative table design project combining functionality with aesthetic appeal.",
-      longDescription: "An innovative table design project that balances functionality, aesthetics, and manufacturing considerations. The project showcases expertise in furniture design, material selection, and creating pieces that enhance living and working spaces.",
+      description: "Sustainability-focused project creating community tables from upcycled pallets, demonstrating engineering passion for building and fostering community connections.",
+      longDescription: "This project showcases my passion for engineering as a tool for building and fostering community through sustainable practices. I focused on sustainability and upcycling by collecting used pallets for free throughout San Francisco. Using carpentry and woodworking skills, I systematically tore down the pallets and rebuilt them into functional tables. The project culminated in building three 8-foot tables for a Friendsgiving celebration with friends, demonstrating how engineering can create meaningful community experiences. This work highlights my commitment to environmental responsibility, resourcefulness, and using technical skills to bring people together through shared spaces and experiences.",
       images: [
         "/projects/table/table1.jpg",
         "/projects/table/table2.jpg",
@@ -128,23 +182,25 @@ const Projects = () => {
         "/projects/table/table7.JPG",
         "/projects/table/table8.JPG"
       ],
-      technologies: ["SolidWorks", "Woodworking", "Metal Fabrication", "Finishing Techniques"],
+      technologies: ["Carpentry", "Woodworking", "Upcycling", "Sustainability Practices", "Community Building"],
       features: [
-        "Functional design and space optimization",
-        "Material selection and sourcing",
-        "Manufacturing process development",
-        "Assembly and finishing techniques",
-        "Quality control and testing",
-        "Documentation and specifications"
+        "Sustainable material sourcing and upcycling",
+        "Pallet deconstruction and reconstruction",
+        "Carpentry and woodworking techniques",
+        "Community-focused design approach",
+        "Resource optimization and waste reduction",
+        "Large-scale furniture construction (8-foot tables)",
+        "Event planning and community gathering facilitation",
+        "Environmental responsibility and circular design"
       ]
     },
     {
-      id: 6,
-      title: "Skateboard Design",
-      category: "Design",
+      id: 8,
+      title: "Custom Skateboard Business",
+      category: "Passion",
       date: "July 2020",
-      description: "Custom skateboard design project featuring innovative materials and ergonomic shapes.",
-      longDescription: "A custom skateboard design project that explores innovative materials, ergonomic shapes, and performance optimization. The project demonstrates expertise in product design, material science, and user-centered design principles for sports equipment.",
+      description: "COVID-era skateboard business creating custom boards for local community, combining woodworking passion with entrepreneurial spirit and community service.",
+      longDescription: "During the COVID-19 pandemic, I started a custom skateboard business that combined my love for woodworking with my passion for skateboarding. What began as a personal project quickly evolved into a small business serving my local community. I specialized in creating custom skateboards using different wood types tailored to specific needs and riding styles. Each board was carefully crafted to meet individual requirements, whether for street skating, cruising, or specific performance characteristics. This entrepreneurial venture demonstrated my ability to identify market opportunities, develop technical skills, and build a community-focused business during challenging times. The business showcased my woodworking expertise, customer service skills, and understanding of the skateboarding community's diverse needs.",
       images: [
         "/projects/skateboard/skateboard1.jpg",
         "/projects/skateboard/skateboard2.jpg",
@@ -155,23 +211,25 @@ const Projects = () => {
         "/projects/skateboard/skateboard7.jpg",
         "/projects/skateboard/skateboard8.jpg"
       ],
-      technologies: ["SolidWorks", "Material Testing", "3D Printing", "CNC Machining"],
+      technologies: ["Woodworking", "Custom Manufacturing", "Material Selection", "Business Development", "Community Engagement"],
       features: [
-        "Ergonomic design and user testing",
-        "Material selection and testing",
-        "Performance optimization",
-        "Manufacturing process design",
-        "Quality control and testing",
-        "Brand and aesthetic development"
+        "Custom skateboard design and manufacturing",
+        "Specialized wood selection for different riding needs",
+        "Local community business development",
+        "COVID-era entrepreneurial adaptation",
+        "Customer consultation and needs assessment",
+        "Quality craftsmanship and finishing",
+        "Small business operations and management",
+        "Community-focused service delivery"
       ]
     },
     {
-      id: 7,
-      title: "Projector System",
+      id: 9,
+      title: "Automatic Remote-Controlled Projector System",
       category: "Engineering",
       date: "April 2020",
-      description: "Advanced projector system design with precision optics and mechanical engineering.",
-      longDescription: "An advanced projector system project that combines precision optics, mechanical engineering, and electronic control systems. The project demonstrates expertise in creating high-performance projection solutions with innovative features and reliable operation.",
+      description: "My introduction to engineering design - an automatic remote-controlled projector system that adjusts height for perfect wall display, solving a real-world problem through integrated mechanical and electronic systems.",
+      longDescription: "This project marked my introduction to engineering design and problem-solving. I built an automatic remote-controlled projector system that would control the height of a projector to perfectly display on my wall. This was my first experience using engineering principles to solve a personal problem I was facing. The project required me to learn circuit design, mechanical design principles, and how to create collapsing and moving integrated systems. I utilized 3D CAD design software to model the mechanical components and implemented DC motor and motor controller designs to achieve precise height adjustment. This foundational project taught me the fundamentals of engineering design, from identifying a problem to developing a complete solution that integrated multiple engineering disciplines.",
       images: [
         "/projects/projector/projector1.jpg",
         "/projects/projector/projector2.jpg",
@@ -185,14 +243,16 @@ const Projects = () => {
         "/projects/projector/projector10.jpg",
         "/projects/projector/projector11.jpg"
       ],
-      technologies: ["SolidWorks", "Optical Design Software", "Arduino", "3D Printing"],
+      technologies: ["3D CAD Design", "DC Motors", "Motor Controllers", "Circuit Design", "Mechanical Design", "Remote Control Systems"],
       features: [
-        "Precision optical system design",
-        "Mechanical housing and mounting",
-        "Electronic control systems",
-        "Thermal management",
-        "Prototype development and testing",
-        "Performance optimization"
+        "Automatic height adjustment system",
+        "Remote control functionality",
+        "Precise wall display positioning",
+        "Integrated mechanical and electronic systems",
+        "Collapsing and moving mechanism design",
+        "DC motor control and implementation",
+        "3D CAD modeling and design",
+        "Problem-solving engineering approach"
       ]
     }
   ];
@@ -291,7 +351,7 @@ const Projects = () => {
                   category={project.category}
                   description={project.description}
                   date={project.date}
-                  image={project.id === 7 ? project.images[project.images.length - 1] : project.id === 3 ? project.images[4] : project.id === 6 ? project.images[6] : project.images[0]}
+                  image={project.images && project.images.length > 0 ? project.images[0] : undefined}
                   onClick={() => handleProjectClick(project.id)}
                 />
               </motion.div>

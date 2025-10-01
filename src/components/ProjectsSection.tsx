@@ -8,27 +8,27 @@ const ProjectsSection = () => {
   const featuredProjects = [
     {
       id: 1,
-      title: "PWS Refrigeration System",
-      category: "Engineering",
-      description: "Advanced refrigeration system design with energy efficiency and smart controls."
+      title: "Proof - Social Health Tracker",
+      category: "UI/UX",
+      description: "Social media app concept that gamifies health challenges through photo-based task tracking and social accountability, featuring a working prototype built with Flutter."
     },
     {
       id: 2,
-      title: "Waste Management and Sorting System",
-      category: "Engineering",
-      description: "Conveyor system prototype designed to improve cafeteria traffic and reduce food waste through automated sorting."
+      title: "Happy Mile - Run Club App",
+      category: "UI/UX",
+      description: "Modern UI/UX redesign of my run club with an innovative app concept featuring contemporary design principles and user-centered interface development."
     },
     {
       id: 3,
-      title: "Architecture Design",
-      category: "Design",
-      description: "Architectural design project showcasing innovative building concepts and spatial planning."
+      title: "PWS Refrigeration System",
+      category: "Engineering",
+      description: "Human-centered engineering project developing a smart refrigeration system for individuals with Prader-Willi Syndrome to promote independence and safety."
     },
     {
       id: 4,
-      title: "Prosthetic Exoskeleton",
+      title: "Waste Management and Sorting System",
       category: "Engineering",
-      description: "Innovative prosthetic exoskeleton design for enhanced mobility and functionality."
+      description: "Redesigned Boston College's waste system with an automated conveyor system that sorts trash, compost, and recycling to improve accessibility and user experience."
     }
   ];
 
