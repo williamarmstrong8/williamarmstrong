@@ -19,9 +19,10 @@ const AboutSection = () => {
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="/about-me.jpg"
+                src="/william-1.JPG"
                 alt="William Armstrong - Creative Professional"
                 className="w-full h-[500px] object-cover transition-transform duration-500 hover:scale-105"
+                style={{ objectPosition: "center 15%" }}
                 onError={(e) => {
                   // Fallback to a placeholder if image doesn't exist
                   e.currentTarget.src = "/placeholder.svg";
@@ -37,7 +38,7 @@ const AboutSection = () => {
                 William Armstrong
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Creative professional passionate about bringing innovative ideas to life through design, technology, and storytelling.
+                Creative engineer passionate about bringing innovative ideas to life through design, technology, and storytelling.
               </p>
             </div>
             
@@ -51,7 +52,7 @@ const AboutSection = () => {
             {/* Main Description */}
             <div className="space-y-6">
               <h3 className="text-3xl font-bold text-foreground">
-                Crafting Digital Experiences
+                Engineer. Designer. Entrepreneur.
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I'm a creative professional who thrives on turning complex ideas into elegant, user-centered solutions. 
@@ -76,16 +77,16 @@ const AboutSection = () => {
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                  Brand Strategy
+                  Human-Centered Engineering
                 </span>
                 <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                  Digital Design
+                  Venture Building
                 </span>
                 <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                  User Experience
+                  UI/UX Design
                 </span>
                 <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                  Creative Direction
+                  Product Development
                 </span>
               </div>
             </div>
