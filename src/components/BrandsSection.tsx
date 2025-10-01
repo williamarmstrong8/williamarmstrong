@@ -1,7 +1,14 @@
 import { useTheme } from "@/contexts/ThemeContext";
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const BrandsSection = () => {
   const { theme } = useTheme();
+  const navigate = useNavigate();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   
   // Placeholder brand data - you can replace these with actual brand information
   const brands = [
@@ -12,20 +19,29 @@ const BrandsSection = () => {
   ];
 
   return (
-    <section className="pb-20 px-20 pt-0">
-      <div className="text-left mb-16">
+    <section ref={ref} className="pb-20 px-20 pt-0">
+      <motion.div 
+        className="text-left mb-16"
+        initial={{ opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
           My Brands
         </h2>
-      </div>
+      </motion.div>
 
       <div className="flex justify-center items-center gap-24">
         {brands.map((brand, index) => (
-          <img
+          <motion.img
             key={index}
             src={brand.logo}
             alt={`${brand.name} logo`}
-            className="h-16 w-auto object-contain opacity-100 transition-all duration-300"
+            onClick={() => navigate('/brands')}
+            className="h-16 w-auto object-contain opacity-100 transition-all duration-300 cursor-pointer hover:scale-110 hover:opacity-80"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.2 + index * 0.1, ease: "easeOut" }}
             style={{ 
               filter: theme === 'dark' 
                 ? 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)' 

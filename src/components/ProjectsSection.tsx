@@ -1,8 +1,12 @@
 import ProjectGridCard from "./ProjectGridCard";
 import { useNavigate } from "react-router-dom";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const ProjectsSection = () => {
   const navigate = useNavigate();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   // Featured projects for the home page - 4 most recent projects in chronological order
   const featuredProjects = [
@@ -33,31 +37,47 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-20 bg-background">
+    <section ref={ref} className="py-20 px-20 bg-background">
       <div className="w-full">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
             Featured Projects
           </h2>
-        </div>
+        </motion.div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredProjects.map((project) => (
-            <ProjectGridCard
+          {featuredProjects.map((project, index) => (
+            <motion.div
               key={project.id}
-              title={project.title}
-              category={project.category}
-              description={project.description}
-              size="compact"
-              onClick={() => navigate("/projects")}
-            />
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.6, delay: 0.2 + index * 0.1, ease: "easeOut" }}
+            >
+              <ProjectGridCard
+                title={project.title}
+                category={project.category}
+                description={project.description}
+                size="compact"
+                onClick={() => navigate("/projects")}
+              />
+            </motion.div>
           ))}
         </div>
 
         {/* View All Projects CTA */}
-        <div className="text-center mt-12">
+        <motion.div 
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+        >
           <a 
             href="/projects" 
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-2xl hover:bg-primary/90 transition-colors font-medium"
@@ -72,7 +92,7 @@ const ProjectsSection = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

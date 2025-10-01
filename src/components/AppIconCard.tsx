@@ -44,7 +44,7 @@ const AppIconCard = ({ className, size = "medium" }: AppIconCardProps) => {
         {brandLogos.map((brand, index) => (
           <motion.div
             key={brand.name}
-            className="relative bg-white rounded-2xl overflow-hidden transition-all duration-200 shadow-md hover:shadow-2xl border border-gray-100 hover:border-gray-300 cursor-pointer"
+            className="relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 hover:border-gray-300 cursor-pointer"
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ 
@@ -54,9 +54,9 @@ const AppIconCard = ({ className, size = "medium" }: AppIconCardProps) => {
             }}
             whileHover={{ 
               scale: 1.05,
-              y: -3,
-              transition: { duration: 0.2, ease: "easeOut" }
+              y: -3
             }}
+            transition={{ duration: 0.3 }}
             style={{
               background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)'
             }}
