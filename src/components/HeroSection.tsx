@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import AppIconCard from "./AppIconCard";
 import FeaturedProjectsCard from "./FeaturedProjectsCard";
+import PhotoGridCard from "./PhotoGridCard";
 
 const HeroSection = () => {
   return (
@@ -51,8 +52,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           >
-            <ProjectCard 
-              title="Project Three" 
+            <PhotoGridCard 
               className="w-full h-full"
               size="small"
             />

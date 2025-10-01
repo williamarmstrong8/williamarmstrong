@@ -25,7 +25,7 @@ const ProjectCard = ({ title, className, size = "medium", image }: ProjectCardPr
             x: ["0px", "-1700px"],
           }}
           transition={{
-            duration: 30,
+            duration: 60,
             ease: "linear",
             repeat: Infinity,
             repeatType: "reverse"

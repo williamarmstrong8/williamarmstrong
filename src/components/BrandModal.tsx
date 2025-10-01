@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/contexts/ThemeContext";
 
@@ -33,6 +33,8 @@ interface BrandModalProps {
 
 const BrandModal = ({ isOpen, onClose, brand }: BrandModalProps) => {
   const [currentScreenshotIndex, setCurrentScreenshotIndex] = useState(0);
+  const [imageAspectRatios, setImageAspectRatios] = useState<number[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -47,6 +49,32 @@ const BrandModal = ({ isOpen, onClose, brand }: BrandModalProps) => {
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
+
+  // Load image aspect ratios
+  useEffect(() => {
+    if (brand?.screenshots && brand.screenshots.length > 0) {
+      const loadAspectRatios = async () => {
+        const ratios: number[] = [];
+        for (const screenshot of brand.screenshots) {
+          const img = new Image();
+          await new Promise((resolve) => {
+            img.onload = () => {
+              ratios.push(img.naturalWidth / img.naturalHeight);
+              resolve(true);
+            };
+            img.onerror = () => {
+              // Fallback to 4:3 aspect ratio for failed images
+              ratios.push(4 / 3);
+              resolve(true);
+            };
+            img.src = screenshot;
+          });
+        }
+        setImageAspectRatios(ratios);
+      };
+      loadAspectRatios();
+    }
+  }, [brand?.screenshots]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -80,15 +108,58 @@ const BrandModal = ({ isOpen, onClose, brand }: BrandModalProps) => {
   };
 
   const nextScreenshot = () => {
-    if (brand.screenshots && brand.screenshots.length > 0) {
+    if (brand?.screenshots && brand.screenshots.length > 0) {
       setCurrentScreenshotIndex((prev) => (prev + 1) % brand.screenshots!.length);
     }
   };
 
   const prevScreenshot = () => {
-    if (brand.screenshots && brand.screenshots.length > 0) {
+    if (brand?.screenshots && brand.screenshots.length > 0) {
       setCurrentScreenshotIndex((prev) => (prev - 1 + brand.screenshots!.length) % brand.screenshots!.length);
     }
+  };
+
+  // Calculate the transform to position the current image
+  const calculateTransform = () => {
+    if (!containerRef.current || !brand?.screenshots || brand.screenshots.length === 0 || imageAspectRatios.length === 0) {
+      return 'translateX(0)';
+    }
+    
+    const containerWidth = containerRef.current.offsetWidth;
+    const containerHeight = 500; // Fixed height
+    
+    // Calculate the actual width of each image based on its aspect ratio
+    const imageWidths = imageAspectRatios.map(ratio => containerHeight * ratio);
+    
+    // Calculate the cumulative position of each image
+    let cumulativeWidth = 0;
+    const imagePositions = imageWidths.map(width => {
+      const position = cumulativeWidth;
+      cumulativeWidth += width;
+      return position;
+    });
+    
+    const currentImagePosition = imagePositions[currentScreenshotIndex] || 0;
+    const currentImageWidth = imageWidths[currentScreenshotIndex] || containerWidth;
+    
+    let translateX = 0;
+    
+    if (brand.screenshots.length === 1) {
+      // Single image: center it
+      translateX = (containerWidth / 2) - (currentImagePosition + currentImageWidth / 2);
+    } else if (currentScreenshotIndex === 0) {
+      // First image: left-align
+      translateX = -currentImagePosition;
+    } else if (currentScreenshotIndex === brand.screenshots.length - 1) {
+      // Last image: right-align
+      translateX = containerWidth - (currentImagePosition + currentImageWidth);
+    } else {
+      // Middle images: center
+      const currentImageCenter = currentImagePosition + (currentImageWidth / 2);
+      translateX = (containerWidth / 2) - currentImageCenter;
+    }
+    
+    return `translateX(${translateX}px)`;
   };
 
   return (
@@ -152,7 +223,7 @@ const BrandModal = ({ isOpen, onClose, brand }: BrandModalProps) => {
           <div className="p-8">
             {/* Hero Section */}
             <div className="mb-12">
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl">
+              <p className="text-xl text-muted-foreground leading-relaxed">
                 {brand.longDescription || brand.description}
               </p>
             </div>
@@ -162,17 +233,24 @@ const BrandModal = ({ isOpen, onClose, brand }: BrandModalProps) => {
               <div className="mb-12">
                 <h3 className="text-2xl font-bold text-foreground mb-6">Product Screenshots</h3>
                 <div className="relative rounded-2xl overflow-hidden bg-muted">
-                  <div className="h-[500px] overflow-hidden">
-                    <div className="flex transition-transform duration-300 ease-in-out h-full">
+                  {/* Image Viewport Container */}
+                  <div ref={containerRef} className="h-[500px] overflow-hidden">
+                    {/* Image Carousel */}
+                    <div 
+                      className="flex transition-transform duration-300 ease-in-out h-full"
+                      style={{
+                        transform: calculateTransform()
+                      }}
+                    >
                       {brand.screenshots.map((screenshot, index) => (
                         <div
                           key={index}
-                          className="flex-shrink-0 w-full h-full relative"
+                          className="flex-shrink-0 relative overflow-hidden h-full"
                         >
                           <img
                             src={screenshot}
                             alt={`${brand.name} screenshot ${index + 1}`}
-                            className="w-full h-full object-contain bg-background"
+                            className="h-full w-auto object-contain"
                             onError={(e) => {
                               e.currentTarget.src = "/placeholder.svg";
                             }}
@@ -186,7 +264,7 @@ const BrandModal = ({ isOpen, onClose, brand }: BrandModalProps) => {
                     <>
                       <button
                         onClick={prevScreenshot}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors z-10"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors z-10"
                       >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -194,7 +272,7 @@ const BrandModal = ({ isOpen, onClose, brand }: BrandModalProps) => {
                       </button>
                       <button
                         onClick={nextScreenshot}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors z-10"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors z-10"
                       >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

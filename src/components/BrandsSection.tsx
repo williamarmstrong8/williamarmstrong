@@ -38,10 +38,15 @@ const BrandsSection = () => {
             src={brand.logo}
             alt={`${brand.name} logo`}
             onClick={() => navigate('/brands')}
-            className="h-16 w-auto object-contain opacity-100 transition-all duration-300 cursor-pointer hover:scale-110 hover:opacity-80"
+            className="h-16 w-auto object-contain cursor-pointer"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 + index * 0.1, ease: "easeOut" }}
+            whileHover={{ 
+              scale: 1.1,
+              opacity: 0.8,
+              transition: { duration: 0.3 }
+            }}
             style={{ 
               filter: theme === 'dark' 
                 ? 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)' 

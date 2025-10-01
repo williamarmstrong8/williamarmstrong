@@ -56,9 +56,13 @@ const Brands = () => {
       ],
       technologies: ["React", "Next.js", "Analytics Dashboard", "Payment Processing", "Brand Design", "Social Media Marketing"],
       screenshots: [
-        "/brands/modbrew/popup-setup.jpg",
-        "/brands/modbrew/analytics-dashboard.jpg",
-        "/brands/modbrew/brand-materials.jpg"
+        "/brands/modbrew/wide.jpeg",
+        "/brands/modbrew/group.jpeg",
+        "/brands/modbrew/hand.jpeg",
+        "/brands/modbrew/mary.jpeg",
+        "/brands/modbrew/rain.jpeg",
+        "/brands/modbrew/shop.jpeg",
+        "/brands/modbrew/window.jpeg"
       ],
       metrics: {
         users: "1000+",
@@ -134,9 +138,13 @@ const Brands = () => {
       ],
       technologies: ["Social Media Marketing", "Partnership Development", "Community Management", "Public Speaking", "Event Organization", "Brand Collaboration"],
       screenshots: [
-        "/brands/happymile/group-runs.jpg",
-        "/brands/happymile/social-media.jpg",
-        "/brands/happymile/partnerships.jpg"
+        "/brands/happy-mile/me.jpeg",
+        "/brands/happy-mile/group.jpeg",
+        "/brands/happy-mile/2BC3E075-F7BF-4177-A916-514E63D772A6_1_102_o.jpeg",
+        "/brands/happy-mile/377E84DF-2DDD-452B-A172-01A9526C0464_1_105_c.jpeg",
+        "/brands/happy-mile/4955AFAD-0835-4876-8128-69B30476917F_1_105_c.jpeg",
+        "/brands/happy-mile/BBBEA98B-2B81-4ED6-AADF-838089EBF357_1_102_o.jpeg",
+        "/brands/happy-mile/D8C6C408-A979-433B-A6E1-936C4280BBBF_1_102_o.jpeg"
       ],
       metrics: {
         users: "100+",
