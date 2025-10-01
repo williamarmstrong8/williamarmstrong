@@ -58,6 +58,30 @@ const Projects = () => {
       ]
     },
     {
+      id: 10,
+      title: "Adviser GPT - Product Launch Video",
+      category: "UI/UX",
+      date: "August 2024",
+      description: "LinkedIn product launch video created for an AI internship, demonstrating creative translation of engineering and business visions into engaging visual storytelling using Adobe After Effects, Illustrator, and Premiere Pro.",
+      longDescription: "During my AI internship at Adviser GPT this summer, I created a professional product launch video that was posted on their LinkedIn and website to attract customers. This project required me to learn Adobe After Effects from scratch, while also utilizing Illustrator and Premiere Pro to create a fun, stylish, and modern demonstration of what the product does. The challenge was to take complex engineering and business visions and translate them into a creative, accessible format that would resonate with potential users. I developed a compelling visual narrative that showcased the product's capabilities in an engaging way, combining motion graphics, visual effects, and professional editing to create a polished final product. The video successfully brought the company's vision to life and served as a key marketing asset that drove customer engagement and product adoption.",
+      thumbnail: "/projects/adviser_gpt/linkedin_cover_photo.jpg",
+      videos: [
+        "/projects/adviser_gpt/Adviser_GPT_Answer_DEMO.mp4"
+      ],
+      technologies: ["Adobe After Effects", "Adobe Illustrator", "Adobe Premiere Pro", "Motion Graphics", "Video Editing", "Visual Storytelling"],
+      features: [
+        "Professional product launch video production",
+        "Self-taught Adobe After Effects proficiency",
+        "Motion graphics and visual effects design",
+        "Creative translation of technical concepts",
+        "Professional video editing and post-production",
+        "Marketing content creation for LinkedIn and website",
+        "Brand storytelling and product demonstration",
+        "Customer engagement and conversion-focused content"
+      ],
+      link: "https://www.linkedin.com/company/advisergpt/"
+    },
+    {
       id: 3,
       title: "PWS Refrigeration System",
       category: "Engineering",
@@ -351,7 +375,7 @@ const Projects = () => {
                   category={project.category}
                   description={project.description}
                   date={project.date}
-                  image={project.images && project.images.length > 0 ? project.images[0] : undefined}
+                  image={project.thumbnail || (project.images && project.images.length > 0 ? project.images[0] : undefined)}
                   onClick={() => handleProjectClick(project.id)}
                 />
               </motion.div>

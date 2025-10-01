@@ -10,6 +10,7 @@ interface ProjectModalProps {
     category: string;
     description: string;
     longDescription?: string;
+    thumbnail?: string;
     images?: string[];
     videos?: string[];
     technologies?: string[];
@@ -213,75 +214,88 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
             {/* Media Gallery Section */}
             {mediaItems.length > 0 && (
               <div className="mb-8">
-                <div className="relative rounded-2xl overflow-hidden bg-muted">
-                  {/* Media Viewport Container */}
-                  <div ref={containerRef} className="h-[600px] overflow-hidden">
-                    {/* Media Carousel */}
-                    <div 
-                      className="flex transition-transform duration-300 ease-in-out h-full"
-                      style={{
-                        transform: calculateTransform()
+                {/* Special case: Single video only - centered with no excess container */}
+                {mediaItems.length === 1 && mediaItems[0].type === 'video' ? (
+                  <div className="flex justify-center">
+                    <video
+                      src={mediaItems[0].src}
+                      className="w-full max-h-[70vh] rounded-2xl"
+                      controls
+                      playsInline
+                      onError={(e) => {
+                        console.error('Video failed to load:', mediaItems[0].src);
                       }}
-                    >
-                      {mediaItems.map((mediaItem, index) => (
-                        <div
-                          key={index}
-                          className="flex-shrink-0 relative overflow-hidden h-full"
-                        >
-                          {mediaItem.type === 'image' ? (
-                            <img
-                              src={mediaItem.src}
-                              alt={`${project.title} - Image ${index + 1}`}
-                              className="h-full w-auto object-contain"
-                              onError={(e) => {
-                                e.currentTarget.src = "/placeholder.svg";
-                              }}
-                            />
-                          ) : (
-                            <video
-                              src={mediaItem.src}
-                              className="h-full w-auto object-contain"
-                              autoPlay
-                              loop
-                              muted
-                              playsInline
-                              onError={(e) => {
-                                console.error('Video failed to load:', mediaItem.src);
-                              }}
-                            />
-                          )}
-                        </div>
-                      ))}
-                    </div>
+                    />
                   </div>
-                  
-                  {/* Media Navigation */}
-                  {mediaItems.length > 1 && (
-                    <>
-                      <button
-                        onClick={prevMedia}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors z-10"
+                ) : (
+                  <div className="relative rounded-2xl overflow-hidden bg-muted">
+                    {/* Media Viewport Container */}
+                    <div ref={containerRef} className="h-[600px] overflow-hidden">
+                      {/* Media Carousel */}
+                      <div 
+                        className="flex transition-transform duration-300 ease-in-out h-full"
+                        style={{
+                          transform: calculateTransform()
+                        }}
                       >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                        </svg>
-                      </button>
-                      <button
-                        onClick={nextMedia}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors z-10"
-                      >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </button>
-                      
-                      {/* Media Counter */}
-                      <div className="absolute bottom-4 right-4 px-3 py-1 bg-black/50 text-white text-sm rounded-full z-10">
-                        {currentMediaIndex + 1} / {mediaItems.length}
+                        {mediaItems.map((mediaItem, index) => (
+                          <div
+                            key={index}
+                            className="flex-shrink-0 relative overflow-hidden h-full"
+                          >
+                            {mediaItem.type === 'image' ? (
+                              <img
+                                src={mediaItem.src}
+                                alt={`${project.title} - Image ${index + 1}`}
+                                className="h-full w-auto object-contain"
+                                onError={(e) => {
+                                  e.currentTarget.src = "/placeholder.svg";
+                                }}
+                              />
+                            ) : (
+                              <video
+                                src={mediaItem.src}
+                                className="h-full w-auto object-contain"
+                                controls
+                                playsInline
+                                onError={(e) => {
+                                  console.error('Video failed to load:', mediaItem.src);
+                                }}
+                              />
+                            )}
+                          </div>
+                        ))}
                       </div>
-                    </>
-                  )}
-                </div>
+                    </div>
+                    
+                    {/* Media Navigation */}
+                    {mediaItems.length > 1 && (
+                      <>
+                        <button
+                          onClick={prevMedia}
+                          className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors z-10"
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                          </svg>
+                        </button>
+                        <button
+                          onClick={nextMedia}
+                          className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors z-10"
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </button>
+                        
+                        {/* Media Counter */}
+                        <div className="absolute bottom-4 right-4 px-3 py-1 bg-black/50 text-white text-sm rounded-full z-10">
+                          {currentMediaIndex + 1} / {mediaItems.length}
+                        </div>
+                      </>
+                    )}
+                  </div>
+                )}
                 
                 {/* Media Thumbnails */}
                 {mediaItems.length > 1 && (
