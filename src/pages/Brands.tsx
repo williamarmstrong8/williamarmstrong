@@ -99,9 +99,9 @@ const Brands = () => {
       ],
       technologies: ["React", "Node.js", "AI-Assisted Development", "Automated Outreach", "Analytics Dashboard", "Web Development"],
       screenshots: [
-        "/brands/clubpack/website-builder.jpg",
-        "/brands/clubpack/admin-dashboard.jpg",
-        "/brands/clubpack/event-management.jpg"
+        "/brands/clubpack/screenshot.png",
+        "/brands/clubpack/screenshot2.png",
+        "/brands/clubpack/Untitled design (2).jpg"
       ],
       metrics: {
         users: "25+",

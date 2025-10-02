@@ -6,12 +6,6 @@ import { Button } from "@/components/ui/button";
 const Footer = () => {
   const { theme } = useTheme();
 
-  const socialLinks = [
-    { name: "LinkedIn", url: "https://linkedin.com/in/williamarmstrong", icon: "💼" },
-    { name: "GitHub", url: "https://github.com/williamarmstrong", icon: "💻" },
-    { name: "Email", url: "mailto:william@example.com", icon: "✉️" },
-  ];
-
   const quickLinks = [
     { name: "About", path: "/about" },
     { name: "Projects", path: "/projects" },
@@ -67,38 +61,55 @@ const Footer = () => {
 
           {/* Connect Section */}
           <motion.div
-            className="space-y-4"
+            className="space-y-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold text-foreground mb-4">Let's Connect</h4>
-            <p className="text-muted-foreground text-sm mb-4">
+            <h4 className="text-xl font-bold text-foreground mb-6">Let's Connect</h4>
+            <p className="text-muted-foreground text-sm mb-8 leading-relaxed">
               Ready to collaborate or just want to chat? I'd love to hear from you.
             </p>
-            <Link to="/contact">
-              <Button variant="connect" size="default" className="mb-4">
-                Get In Touch
-              </Button>
-            </Link>
             
             {/* Social Links */}
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <motion.a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-muted/50 hover:bg-muted transition-colors duration-200 flex items-center justify-center text-sm hover:scale-110"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {social.icon}
-                </motion.a>
-              ))}
+            <div className="flex space-x-3 mb-6">
+              <motion.a
+                href="mailto:william@example.com"
+                className="w-12 h-12 rounded-full bg-muted/50 hover:bg-muted transition-colors duration-200 flex items-center justify-center hover:scale-110"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <svg className="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </motion.a>
+              <motion.a
+                href="https://linkedin.com/in/williamarmstrong"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 rounded-full bg-muted/50 hover:bg-muted transition-colors duration-200 flex items-center justify-center hover:scale-110"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <svg className="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
+              </motion.a>
+              <motion.a
+                href="https://github.com/williamarmstrong"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 rounded-full bg-muted/50 hover:bg-muted transition-colors duration-200 flex items-center justify-center hover:scale-110"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <svg className="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </motion.a>
             </div>
+            
           </motion.div>
         </div>
 
@@ -129,7 +140,6 @@ const Footer = () => {
           </div>
           
           <div className="flex items-center space-x-6 text-sm text-muted-foreground">
-            <span>Made with ❤️ in California</span>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
               <span>Available for opportunities</span>
