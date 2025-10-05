@@ -6,35 +6,35 @@ const Contact = () => {
     {
       title: "Email",
       description: "Get in touch directly via email",
-      value: "william@example.com",
+      value: "williamarmstrong8@gmail.com",
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
-      action: "mailto:william@example.com"
+      action: "mailto:williamarmstrong8@gmail.com"
     },
     {
       title: "LinkedIn",
       description: "Connect with me professionally",
-      value: "linkedin.com/in/williamarmstrong",
+      value: "linkedin.com/in/william-armstrong8",
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
         </svg>
       ),
-      action: "https://linkedin.com/in/williamarmstrong"
+      action: "https://www.linkedin.com/in/william-armstrong8/"
     },
     {
       title: "GitHub",
       description: "View my code and projects",
-      value: "github.com/williamarmstrong",
+      value: "github.com/williamarmstrong8",
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       ),
-      action: "https://github.com/williamarmstrong"
+      action: "https://github.com/williamarmstrong8"
     }
   ];
 

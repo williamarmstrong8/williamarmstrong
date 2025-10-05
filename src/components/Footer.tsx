@@ -75,7 +75,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex space-x-3 mb-6">
               <motion.a
-                href="mailto:william@example.com"
+                href="mailto:williamarmstrong8@gmail.com"
                 className="w-12 h-12 rounded-full bg-muted/50 hover:bg-muted transition-colors duration-200 flex items-center justify-center hover:scale-110"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -85,7 +85,7 @@ const Footer = () => {
                 </svg>
               </motion.a>
               <motion.a
-                href="https://linkedin.com/in/williamarmstrong"
+                href="https://www.linkedin.com/in/william-armstrong8/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-muted/50 hover:bg-muted transition-colors duration-200 flex items-center justify-center hover:scale-110"
@@ -97,7 +97,7 @@ const Footer = () => {
                 </svg>
               </motion.a>
               <motion.a
-                href="https://github.com/williamarmstrong"
+                href="https://github.com/williamarmstrong8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-muted/50 hover:bg-muted transition-colors duration-200 flex items-center justify-center hover:scale-110"
