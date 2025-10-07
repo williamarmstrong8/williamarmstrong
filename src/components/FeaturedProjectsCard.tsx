@@ -1,10 +1,13 @@
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const FeaturedProjectsCard = () => {
   const navigate = useNavigate();
-  const projects = [
+  const isMobile = useIsMobile();
+  
+  const allProjects = [
     {
       title: "Proof - Social Health Tracker",
       category: "UI/UX",
@@ -36,6 +39,9 @@ const FeaturedProjectsCard = () => {
       image: "/projects/table/table1.jpg"
     }
   ];
+  
+  // Limit to 3 projects on mobile
+  const projects = isMobile ? allProjects.slice(0, 3) : allProjects;
 
   return (
     <motion.div

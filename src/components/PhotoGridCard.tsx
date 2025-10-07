@@ -53,13 +53,13 @@ const PhotoGridCard = ({ className, size = "medium" }: PhotoGridCardProps) => {
       
       {/* Photos Grid - Seamless Design */}
       <div className={cn(
-        "grid w-full h-full gap-1 relative z-10 overflow-hidden rounded-2xl",
+        "grid w-full h-full gap-1 relative z-10 overflow-hidden rounded-2xl p-2",
         size === "large" ? "grid-cols-2" : "grid-cols-2"
       )}>
         {photos.map((photo, index) => (
            <motion.div
              key={photo.alt}
-             className="relative overflow-hidden cursor-pointer group/photo"
+             className="relative overflow-hidden cursor-pointer group/photo rounded-lg"
              initial={{ opacity: 0, scale: 0.8, y: 20 }}
              animate={{ opacity: 1, scale: 1, y: 0 }}
              transition={{ 
@@ -70,7 +70,6 @@ const PhotoGridCard = ({ className, size = "medium" }: PhotoGridCardProps) => {
              whileHover={{ 
                scale: 1.02
              }}
-             transition={{ duration: 0.3 }}
              onClick={() => navigate('/photography')}
            >
             {/* Photo content */}
