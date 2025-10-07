@@ -5,8 +5,10 @@ import PhotoCard from "@/components/PhotoCard";
 import ImageModal from "@/components/ImageModal";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Photography = () => {
+  const isMobile = useIsMobile();
   const [selectedCollection, setSelectedCollection] = useState("all");
   const [modalImage, setModalImage] = useState<{ src: string; title: string; index: number } | null>(null);
   const [visibleCount, setVisibleCount] = useState(20); // Start with 20 images
@@ -247,7 +249,7 @@ const Photography = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       
-      <main className="px-20 pt-8 pb-16">
+      <main className={`${isMobile ? 'px-4' : 'px-20'} pt-8 pb-16`}>
         {/* Page Title */}
         <motion.section 
           className="text-center mb-12"

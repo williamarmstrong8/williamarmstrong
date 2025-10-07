@@ -18,11 +18,11 @@ const FeaturedProjectsCard = () => {
       category: "UI/UX",
       image: "/projects/happy mile/Untitled design (1).jpg"
     },
-    {
-      title: "Architecture Project",
-      category: "UI/UX",
-      image: "/projects/architecture/SI1.jpg"
-    },
+      {
+        title: "Automatic Remote-Controlled Projector System",
+        category: "Engineering",
+        image: "/projects/projector/projector1.jpg"
+      },
     {
       title: "Prosthetic Exoskeleton",
       category: "Biomedical",
@@ -40,8 +40,14 @@ const FeaturedProjectsCard = () => {
     }
   ];
   
-  // Limit to 3 projects on mobile
-  const projects = isMobile ? allProjects.slice(0, 3) : allProjects;
+  // Show specific projects on mobile
+  const projects = isMobile 
+    ? allProjects.filter(project => 
+        project.title === "Proof - Social Health Tracker" ||
+        project.title === "Prosthetic Exoskeleton" ||
+        project.title === "Automatic Remote-Controlled Projector System"
+      )
+    : allProjects;
 
   return (
     <motion.div

@@ -14,8 +14,8 @@ const ProjectCard = ({ title, className, size = "medium", image }: ProjectCardPr
   
   // Adjust animation values based on screen size
   const animationValues = isMobile 
-    ? { width: "2000px", movement: "-1400px" }  // Mobile: smaller movement range
-    : { width: "3000px", movement: "-2000px" }; // Desktop: larger movement range
+    ? { width: "2000px", movement: "-1000px" }  // Mobile: smaller movement range
+    : { width: "3000px", movement: "-1000px" }; // Desktop: larger movement range
 
   return (
     <div
@@ -28,8 +28,10 @@ const ProjectCard = ({ title, className, size = "medium", image }: ProjectCardPr
     >
       {image && (
         <motion.div
-          className="absolute h-[100%] left-1/2"
-          style={{ width: animationValues.width, transform: 'translateX(-50%)' }}
+          className="absolute h-[100%] left-0"
+          style={{ 
+            width: animationValues.width
+          }}
           animate={{ 
             x: ["0px", animationValues.movement],
           }}
@@ -43,7 +45,7 @@ const ProjectCard = ({ title, className, size = "medium", image }: ProjectCardPr
           <img 
             src={image} 
             alt={title}
-            className="h-full w-full object-contain object-center"
+            className="h-full w-full object-contain object-left"
           />
         </motion.div>
       )}

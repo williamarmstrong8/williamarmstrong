@@ -1,7 +1,9 @@
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Contact = () => {
+  const isMobile = useIsMobile();
   const contactMethods = [
     {
       title: "Email",
@@ -43,7 +45,7 @@ const Contact = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       
-      <main className="px-20 pt-8 pb-16">
+      <main className={`${isMobile ? 'px-4' : 'px-20'} pt-8 pb-16`}>
         {/* Page Title */}
         <section className="text-center mb-16">
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-none">

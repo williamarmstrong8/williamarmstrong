@@ -4,6 +4,7 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import BrandCard from "@/components/BrandCard";
 import BrandModal from "@/components/BrandModal";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 type Brand = {
   name: string;
@@ -33,6 +34,7 @@ type Brand = {
 };
 
 const Brands = () => {
+  const isMobile = useIsMobile();
   const [selectedBrand, setSelectedBrand] = useState<number | null>(null);
 
   // Detailed brand information with comprehensive data for modals
@@ -207,7 +209,7 @@ const Brands = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       
-      <main className="px-20 pt-8 pb-16">
+      <main className={`${isMobile ? 'px-4' : 'px-20'} pt-8 pb-16`}>
         {/* Page Title */}
         <motion.section 
           className="text-center mb-12"
