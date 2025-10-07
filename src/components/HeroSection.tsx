@@ -69,21 +69,6 @@ const HeroSection = () => {
               />
             </motion.div>
           </div>
-
-          {/* UI Carousel Card - Horizontal */}
-          <motion.div 
-            className="h-[250px] w-full"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          >
-            <ProjectCard 
-              title="Project Four" 
-              className="w-full h-full"
-              size="large"
-              image="/transparent-ui-apps.png"
-            />
-          </motion.div>
         </motion.section>
       ) : (
         // Desktop Layout - Original Grid
