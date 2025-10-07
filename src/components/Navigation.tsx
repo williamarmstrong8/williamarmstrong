@@ -45,9 +45,20 @@ const Navigation = () => {
         ))}
       </nav>
 
+      {/* Desktop Right Side */}
+      <div className="hidden md:flex items-center space-x-2">
+        <ThemeToggle />
+        <Link to="/contact">
+          <Button variant="connect" size="default">
+            Connect
+          </Button>
+        </Link>
+      </div>
+
       {/* Mobile Navigation */}
       {isMobile && (
-        <nav className="md:hidden">
+        <div className="md:hidden flex items-center space-x-2">
+          <ThemeToggle />
           <Button
             variant="ghost"
             size="sm"
@@ -58,7 +69,7 @@ const Navigation = () => {
           </Button>
           
           {isMenuOpen && (
-            <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border shadow-lg z-50">
+            <div className="absolute top-full right-0 left-0 bg-background/95 backdrop-blur-md border-b border-border shadow-lg z-50">
               <div className="flex flex-col p-4 space-y-2">
                 {navItems.map((item) => (
                   <Link 
@@ -74,20 +85,18 @@ const Navigation = () => {
                     </Button>
                   </Link>
                 ))}
+                <div className="pt-2 border-t border-border">
+                  <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                    <Button variant="connect" className="w-full">
+                      Connect
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           )}
-        </nav>
+        </div>
       )}
-
-      <div className="flex items-center space-x-2">
-        <ThemeToggle />
-        <Link to="/contact">
-          <Button variant="connect" size={isMobile ? "sm" : "default"}>
-            Connect
-          </Button>
-        </Link>
-      </div>
     </header>
   );
 };

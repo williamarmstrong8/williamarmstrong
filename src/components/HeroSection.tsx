@@ -18,7 +18,7 @@ const HeroSection = () => {
       >
         <h2 className={`font-bold text-foreground leading-none ${
           isMobile 
-            ? 'text-4xl' 
+            ? 'text-5xl' 
             : 'text-6xl md:text-8xl lg:text-9xl'
         }`}>
           Always Creating
@@ -33,70 +33,12 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          {/* Hero Card Layout - 2x2 Grid */}
+          {/* UI Carousel Card - Horizontal */}
           <motion.div 
-            className="bg-card border border-border rounded-lg p-4 shadow-lg"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          >
-            <div className="grid grid-cols-2 gap-3 h-[200px]">
-              <motion.div 
-                className="bg-white rounded-lg shadow-sm overflow-hidden"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-              >
-                <AppIconCard 
-                  className="w-full h-full"
-                  size="small"
-                />
-              </motion.div>
-              <motion.div 
-                className="bg-white rounded-lg shadow-sm overflow-hidden"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-              >
-                <PhotoGridCard 
-                  className="w-full h-full"
-                  size="small"
-                />
-              </motion.div>
-              <motion.div 
-                className="bg-white rounded-lg shadow-sm flex items-center justify-center"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-              >
-                <div className="text-2xl font-bold text-black">MB</div>
-              </motion.div>
-              <motion.div 
-                className="bg-white rounded-lg shadow-sm flex items-center justify-center"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
-              >
-                <div className="text-2xl">😊</div>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Additional Cards - Remove fixed heights */}
-          <motion.div 
-            className="min-h-[300px]"
+            className="h-[250px] w-full"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          >
-            <FeaturedProjectsCard />
-          </motion.div>
-          
-          <motion.div 
-            className="h-[250px]"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
             <ProjectCard 
               title="Project Four" 
@@ -104,6 +46,43 @@ const HeroSection = () => {
               size="large"
               image="/transparent-ui-apps.png"
             />
+          </motion.div>
+
+          {/* App Icons and Photo Cards - Side by Side */}
+          <div className="grid grid-cols-2 gap-4 w-full">
+            <motion.div 
+              className="aspect-square w-full"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            >
+              <AppIconCard 
+                className="w-full h-full"
+                size="small"
+              />
+            </motion.div>
+
+            <motion.div 
+              className="aspect-square w-full"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+            >
+              <PhotoGridCard 
+                className="w-full h-full"
+                size="small"
+              />
+            </motion.div>
+          </div>
+
+          {/* Featured Projects */}
+          <motion.div 
+            className="w-full"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          >
+            <FeaturedProjectsCard />
           </motion.div>
         </motion.section>
       ) : (
