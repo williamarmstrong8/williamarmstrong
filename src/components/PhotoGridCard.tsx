@@ -35,7 +35,7 @@ const PhotoGridCard = ({ className, size = "medium" }: PhotoGridCardProps) => {
   return (
     <motion.div
       className={cn(
-        "bg-project-card backdrop-blur-md border border-project-card-border rounded-3xl p-6 transition-all duration-500 ease-out relative overflow-hidden",
+        "bg-project-card backdrop-blur-md border border-project-card-border rounded-3xl p-3 md:p-6 transition-all duration-500 ease-out relative overflow-hidden",
         "flex flex-col items-center justify-center",
         "shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]",
         className
@@ -53,7 +53,7 @@ const PhotoGridCard = ({ className, size = "medium" }: PhotoGridCardProps) => {
       
       {/* Photos Grid - Seamless Design */}
       <div className={cn(
-        "grid w-full h-full gap-1 relative z-10 overflow-hidden rounded-2xl p-2",
+        "grid w-full h-full gap-1 relative z-10 overflow-hidden rounded-2xl p-1 md:p-2",
         size === "large" ? "grid-cols-2" : "grid-cols-2"
       )}>
         {photos.map((photo, index) => (
