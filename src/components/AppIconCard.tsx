@@ -38,13 +38,13 @@ const AppIconCard = ({ className, size = "medium" }: AppIconCardProps) => {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       {/* App Icons Grid - Modern Design */}
       <div className={cn(
-        "grid w-full h-full gap-3 relative z-10",
+        "grid w-full h-full gap-2 relative z-10 p-2",
         size === "large" ? "grid-cols-2" : "grid-cols-2"
       )}>
         {brandLogos.map((brand, index) => (
           <motion.div
             key={brand.name}
-            className="relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 hover:border-gray-300 cursor-pointer"
+            className="relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg border border-gray-100 hover:border-gray-300 cursor-pointer"
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ 
@@ -56,7 +56,6 @@ const AppIconCard = ({ className, size = "medium" }: AppIconCardProps) => {
               scale: 1.05,
               y: -3
             }}
-            transition={{ duration: 0.3 }}
             style={{
               background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)'
             }}
@@ -65,7 +64,7 @@ const AppIconCard = ({ className, size = "medium" }: AppIconCardProps) => {
             <div className="absolute inset-0 bg-gradient-to-br from-white/50 via-transparent to-gray-50/30 opacity-0 group-hover/icon:opacity-100 transition-opacity duration-300" />
             
             {/* Icon content */}
-            <div className="relative w-full h-full flex items-center justify-center p-3">
+            <div className="relative w-full h-full flex items-center justify-center p-1">
               <img 
                 src={brand.logo} 
                 alt={`${brand.name} logo`}
@@ -74,7 +73,7 @@ const AppIconCard = ({ className, size = "medium" }: AppIconCardProps) => {
             </div>
 
             {/* Modern border effect */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover/icon:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover/icon:opacity-100 transition-opacity duration-300" />
           </motion.div>
         ))}
       </div>
