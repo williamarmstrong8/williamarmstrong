@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import AboutCard from "@/components/AboutCard";
 import Timeline from "@/components/Timeline";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const About = () => {
+  const isMobile = useIsMobile();
   // About cards data
   const aboutCards = [
     {
@@ -128,7 +130,7 @@ const About = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       
-      <main className="px-20 pt-8 pb-16">
+      <main className={`${isMobile ? 'px-4' : 'px-20'} pt-8 pb-16`}>
         {/* Page Title */}
         <motion.section 
           className="text-center mb-16"

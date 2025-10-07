@@ -24,9 +24,9 @@ const BrandsSection = () => {
   const duplicatedBrands = [...brands, ...brands];
 
   return (
-    <section ref={ref} className={`pb-20 ${isMobile ? 'pt-16 px-4' : 'pt-0 px-20'}`}>
+    <section ref={ref} className={`py-16 ${isMobile ? 'px-4' : 'px-20'}`}>
       <motion.div 
-        className={`text-left ${isMobile ? 'mb-8' : 'mb-16'}`}
+        className={`${isMobile ? 'text-center' : 'text-left'} ${isMobile ? 'mb-8' : 'mb-16'}`}
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.8, ease: "easeOut" }}

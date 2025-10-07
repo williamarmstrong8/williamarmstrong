@@ -2,9 +2,11 @@ import ProjectGridCard from "./ProjectGridCard";
 import { useNavigate } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const ProjectsSection = () => {
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
@@ -37,11 +39,11 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section ref={ref} className="py-20 px-20 bg-background">
+    <section ref={ref} className={`py-16 ${isMobile ? 'px-4' : 'px-20'} bg-background`}>
       <div className="w-full">
         {/* Section Header */}
         <motion.div 
-          className="text-center mb-16"
+          className={`text-center ${isMobile ? 'mb-8' : 'mb-16'}`}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -53,7 +55,7 @@ const ProjectsSection = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredProjects.map((project, index) => (
+          {(isMobile ? featuredProjects.slice(0, 3) : featuredProjects).map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}

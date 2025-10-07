@@ -1,9 +1,11 @@
 import { useTheme } from "@/contexts/ThemeContext";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const AboutSection = () => {
   const { theme } = useTheme();
+  const isMobile = useIsMobile();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const [displayedText, setDisplayedText] = useState("");
@@ -26,11 +28,11 @@ const AboutSection = () => {
   }, [isInView]);
 
   return (
-    <section ref={ref} className="py-20 px-20 bg-background">
+    <section ref={ref} className={`py-16 ${isMobile ? 'px-4' : 'px-20'} bg-background`}>
       <div className="w-full">
         {/* Section Header */}
         <motion.div 
-          className="text-center mb-16"
+          className={`text-center ${isMobile ? 'mb-8' : 'mb-16'}`}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -102,7 +104,7 @@ const AboutSection = () => {
           >
             {/* Main Description */}
             <motion.div 
-              className="space-y-6"
+              className={`${isMobile ? 'space-y-3' : 'space-y-6'}`}
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}

@@ -9,7 +9,7 @@ const HeroSection = () => {
   const isMobile = useIsMobile();
 
   return (
-    <main className={`min-h-screen ${isMobile ? 'px-4 pt-4 pb-0' : 'px-20 pt-8 pb-0'}`}>
+    <main className={`min-h-screen ${isMobile ? 'px-4 py-16' : 'px-20 py-16'}`}>
       <motion.section 
         className={`text-center ${isMobile ? 'mb-8' : 'mb-12'}`}
         initial={{ opacity: 0, y: 30 }}
@@ -18,7 +18,7 @@ const HeroSection = () => {
       >
         <h2 className={`font-bold text-foreground leading-none ${
           isMobile 
-            ? 'text-5xl' 
+            ? 'text-6xl' 
             : 'text-6xl md:text-8xl lg:text-9xl'
         }`}>
           Always Creating
@@ -33,19 +33,14 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          {/* UI Carousel Card - Horizontal */}
+          {/* Featured Projects */}
           <motion.div 
-            className="h-[250px] w-full"
+            className="w-full"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
-            <ProjectCard 
-              title="Project Four" 
-              className="w-full h-full"
-              size="large"
-              image="/transparent-ui-apps.png"
-            />
+            <FeaturedProjectsCard />
           </motion.div>
 
           {/* App Icons and Photo Cards - Side by Side */}
@@ -75,14 +70,19 @@ const HeroSection = () => {
             </motion.div>
           </div>
 
-          {/* Featured Projects */}
+          {/* UI Carousel Card - Horizontal */}
           <motion.div 
-            className="w-full"
+            className="h-[250px] w-full"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
-            <FeaturedProjectsCard />
+            <ProjectCard 
+              title="Project Four" 
+              className="w-full h-full"
+              size="large"
+              image="/transparent-ui-apps.png"
+            />
           </motion.div>
         </motion.section>
       ) : (

@@ -4,8 +4,10 @@ import Navigation from "@/components/Navigation";
 import ProjectGridCard from "@/components/ProjectGridCard";
 import ProjectFilter from "@/components/ProjectFilter";
 import ProjectModal from "@/components/ProjectModal";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Projects = () => {
+  const isMobile = useIsMobile();
   const [activeFilter, setActiveFilter] = useState("All");
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
@@ -301,7 +303,7 @@ const Projects = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       
-      <main className="px-20 pt-8 pb-16">
+      <main className={`${isMobile ? 'px-4' : 'px-20'} pt-8 pb-16`}>
         {/* Page Title */}
         <motion.section 
           className="text-center mb-12"
@@ -328,7 +330,7 @@ const Projects = () => {
         </motion.section>
 
         {/* Filter Section */}
-        <section className="flex justify-end mb-12">
+        <section className={`flex ${isMobile ? 'justify-center' : 'justify-end'} mb-12`}>
           <ProjectFilter 
             activeFilter={activeFilter}
             onFilterChange={setActiveFilter}
