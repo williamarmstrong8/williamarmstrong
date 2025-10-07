@@ -127,7 +127,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
     }
     
     const containerWidth = containerRef.current.offsetWidth;
-    const containerHeight = 600; // Fixed height
+    const containerHeight = containerRef.current.offsetHeight; // Use actual container height
     
     // Calculate the actual width of each media item based on its aspect ratio
     const mediaWidths = mediaAspectRatios.map(ratio => containerHeight * ratio);
@@ -230,7 +230,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                 ) : (
                   <div className="relative rounded-2xl overflow-hidden bg-muted">
                     {/* Media Viewport Container */}
-                    <div ref={containerRef} className="h-[600px] overflow-hidden">
+                    <div ref={containerRef} className="h-[250px] sm:h-[400px] md:h-[600px] overflow-hidden">
                       {/* Media Carousel */}
                       <div 
                         className="flex transition-transform duration-300 ease-in-out h-full"

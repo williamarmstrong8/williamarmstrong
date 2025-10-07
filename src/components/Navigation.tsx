@@ -69,7 +69,7 @@ const Navigation = () => {
           </Button>
           
           {isMenuOpen && (
-            <div className="absolute top-full right-0 left-0 bg-background/95 backdrop-blur-md border-b border-border shadow-lg z-50">
+            <div className="absolute top-full right-2 left-0 bg-background/95 backdrop-blur-md border-b border-border shadow-lg z-50 rounded-b-lg">
               <div className="flex flex-col p-4 space-y-2">
                 {navItems.map((item) => (
                   <Link 
@@ -102,3 +102,5 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
+

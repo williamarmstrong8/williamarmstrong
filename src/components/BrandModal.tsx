@@ -126,7 +126,7 @@ const BrandModal = ({ isOpen, onClose, brand }: BrandModalProps) => {
     }
     
     const containerWidth = containerRef.current.offsetWidth;
-    const containerHeight = 500; // Fixed height
+    const containerHeight = containerRef.current.offsetHeight; // Use actual container height
     
     // Calculate the actual width of each image based on its aspect ratio
     const imageWidths = imageAspectRatios.map(ratio => containerHeight * ratio);
@@ -234,7 +234,7 @@ const BrandModal = ({ isOpen, onClose, brand }: BrandModalProps) => {
                 <h3 className="text-2xl font-bold text-foreground mb-6">Product Screenshots</h3>
                 <div className="relative rounded-2xl overflow-hidden bg-muted">
                   {/* Image Viewport Container */}
-                  <div ref={containerRef} className="h-[500px] overflow-hidden">
+                  <div ref={containerRef} className="h-[250px] sm:h-[400px] md:h-[600px] overflow-hidden">
                     {/* Image Carousel */}
                     <div 
                       className="flex transition-transform duration-300 ease-in-out h-full"

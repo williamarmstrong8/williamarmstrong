@@ -191,7 +191,7 @@ const Photography = () => {
   // Get number of columns based on screen size
   const getColumnCount = () => {
     if (typeof window === 'undefined') return 4;
-    if (window.innerWidth < 768) return 1;
+    if (window.innerWidth < 768) return 2;
     if (window.innerWidth < 1024) return 2;
     return 4;
   };
@@ -336,9 +336,9 @@ const Photography = () => {
             delay: 0.8
           }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {Array.from({ length: getColumnCount() }, (_, colIndex) => (
-              <div key={colIndex} className="space-y-6">
+              <div key={colIndex} className="space-y-4 md:space-y-6">
                 <AnimatePresence mode="wait">
                   {visiblePhotos
                     .map((photo, index) => ({ photo, index }))
