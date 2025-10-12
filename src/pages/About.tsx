@@ -81,12 +81,6 @@ const About = () => {
       description: "Led and managed daily training sessions, fostering skill development, teamwork, and discipline in a high-energy, inclusive environment. Provided individualized coaching, organized drills, and ensured a positive experience for players of varying skill levels."
     },
     {
-      title: "Vanderbilt, Prosthetic Exo-Skeleton",
-      subtitle: "Mechanical Engineer Intern",
-      date: "June 2021 – August 2021",
-      description: "Designed, prototyped, and tested a prosthetic exoskeleton using EMG-controlled motors, aiding in up to 10 lbs of lifting force to support improved mobility for individuals with disabilities."
-    },
-    {
       title: "Mark Cavagnero Associates",
       subtitle: "Architecture Intern",
       date: "June 2021 – August 2021",
@@ -107,6 +101,12 @@ const About = () => {
       subtitle: "Boston College Academic Project",
       date: "August 2024 – December 2024",
       description: "Built machine learning models (decision tree, kNN, Naive Bayes, SVM) achieving 90% accuracy in predicting water potability, improving monitoring capabilities and supporting targeted public health interventions."
+    },
+    {
+      title: "Vanderbilt, Prosthetic Exo-Skeleton",
+      subtitle: "Mechanical Engineer Intern",
+      date: "June 2021 – August 2021",
+      description: "Designed, prototyped, and tested a prosthetic exoskeleton using EMG-controlled motors, aiding in up to 10 lbs of lifting force to support improved mobility for individuals with disabilities."
     }
   ];
 
