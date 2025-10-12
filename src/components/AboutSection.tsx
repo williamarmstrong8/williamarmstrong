@@ -118,8 +118,9 @@ const AboutSection = () => {
                 ensuring that form and function work in perfect harmony.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                My journey spans across multiple disciplines, from brand development to digital innovation, 
-                always with the goal of creating meaningful connections between brands and their audiences.
+                My journey spans three core disciplines: brand development, creative digital design, and physical product engineering. 
+                Whether building brand identities, crafting digital experiences, or engineering physical solutions, 
+                I create meaningful work that connects vision with reality.
               </p>
             </motion.div>
 

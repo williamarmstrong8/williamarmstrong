@@ -22,6 +22,10 @@ interface BrandModalProps {
       revenue?: string;
       growth?: string;
       partnerships?: string;
+      customLabel1?: string;
+      customLabel2?: string;
+      customLabel3?: string;
+      customLabel4?: string;
     };
     team?: string[];
     timeline?: {
@@ -335,25 +339,25 @@ const BrandModal = ({ isOpen, onClose, brand }: BrandModalProps) => {
                       {brand.metrics.users && (
                         <div className="p-4 bg-card border border-border rounded-xl">
                           <div className="text-2xl font-bold text-foreground">{brand.metrics.users}</div>
-                          <div className="text-sm text-muted-foreground">Active Users</div>
+                          <div className="text-sm text-muted-foreground">{brand.metrics.customLabel1 || "Active Users"}</div>
                         </div>
                       )}
                       {brand.metrics.revenue && (
                         <div className="p-4 bg-card border border-border rounded-xl">
                           <div className="text-2xl font-bold text-foreground">{brand.metrics.revenue}</div>
-                          <div className="text-sm text-muted-foreground">Annual Revenue</div>
+                          <div className="text-sm text-muted-foreground">{brand.metrics.customLabel2 || "Annual Revenue"}</div>
                         </div>
                       )}
                       {brand.metrics.growth && (
                         <div className="p-4 bg-card border border-border rounded-xl">
                           <div className="text-2xl font-bold text-foreground">{brand.metrics.growth}</div>
-                          <div className="text-sm text-muted-foreground">Growth Rate</div>
+                          <div className="text-sm text-muted-foreground">{brand.metrics.customLabel3 || "Growth"}</div>
                         </div>
                       )}
                       {brand.metrics.partnerships && (
                         <div className="p-4 bg-card border border-border rounded-xl">
                           <div className="text-2xl font-bold text-foreground">{brand.metrics.partnerships}</div>
-                          <div className="text-sm text-muted-foreground">Partnerships</div>
+                          <div className="text-sm text-muted-foreground">{brand.metrics.customLabel4 || "Partnerships"}</div>
                         </div>
                       )}
                     </div>
