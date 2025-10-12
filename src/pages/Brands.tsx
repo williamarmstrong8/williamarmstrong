@@ -25,6 +25,8 @@ type Brand = {
     partnerships?: string;
     customLabel1?: string;
     customLabel2?: string;
+    customLabel3?: string;
+    customLabel4?: string;
   };
   team?: string[];
   timeline?: {
@@ -64,7 +66,8 @@ const Brands = () => {
         "/brands/modbrew/mary.jpeg",
         "/brands/modbrew/rain.jpeg",
         "/brands/modbrew/shop.jpeg",
-        "/brands/modbrew/window.jpeg"
+        "/brands/modbrew/window.jpeg",
+        "/brands/modbrew/Screenshot 2025-10-12 at 9.51.59 AM.png"
       ],
       metrics: {
         users: "1000+",
@@ -72,9 +75,10 @@ const Brands = () => {
         customLabel1: "Customers",
         customLabel2: "Per Pop-up",
         growth: "Viral Growth",
-        partnerships: "Campus Community"
+        customLabel3: "Social Media Strategy",
+        partnerships: "Boston College Funded"
       },
-      team: ["Founder & CEO", "Brand Designer", "Operations Manager", "Community Manager"],
+      team: ["Founder/Brand Manager", "Barista", "Social Media Team"],
       timeline: [
         { year: "2025", milestone: "Identified campus coffee market gap" },
         { year: "2025", milestone: "Launched speakeasy-style pop-up" },
@@ -99,21 +103,21 @@ const Brands = () => {
         "Built with low-code experience and AI assistance",
         "All-in-one solution replacing multiple scattered tools"
       ],
-      technologies: ["React", "Node.js", "AI-Assisted Development", "Automated Outreach", "Analytics Dashboard", "Web Development"],
+      technologies: ["React", "TypeScript", "Cursor", "AI-Assisted Development", "Automated Outreach", "Analytics Dashboard"],
       screenshots: [
         "/brands/clubpack/screenshot.png",
         "/brands/clubpack/screenshot2.png",
-        "/brands/clubpack/Untitled design (2).jpg"
+        "/brands/clubpack/Untitled design (4).jpg"
       ],
       metrics: {
         users: "25+",
-        revenue: "Seeking Funding",
+        revenue: "Beta Testing",
         customLabel1: "Clubs Trialing",
-        customLabel2: "Funding Stage",
+        customLabel2: "Current Stage",
         growth: "Rapid Expansion",
         partnerships: "College Clubs"
       },
-      team: ["Founder & CEO", "Co-Founder", "Product Development", "Growth & Outreach"],
+      team: ["Founder & CEO", "Co-Founder"],
       timeline: [
         { year: "2025", milestone: "Founded run club and identified software fragmentation problem" },
         { year: "2025", milestone: "Built ClubPack platform using low-code experience and AI assistance" },
@@ -156,7 +160,7 @@ const Brands = () => {
         growth: "Viral Growth",
         partnerships: "Nike Partnership"
       },
-      team: ["Founder & CEO", "Co-Founder", "Social Media Manager", "Partnership Coordinator"],
+      team: ["Founder/Event Organizer", "Social Media Manager", "Event Staffing"],
       timeline: [
         { year: "2024", milestone: "Founded run club to address SF community gap" },
         { year: "2024", milestone: "Went viral on social media within 2 months" },
@@ -183,17 +187,22 @@ const Brands = () => {
       ],
       technologies: ["Social Media Marketing", "Content Creation", "Blog Writing", "Merchandise Design", "Partnership Development", "Brand Building"],
       screenshots: [
-        "/brands/drifters/experiences.jpg",
-        "/brands/drifters/planning.jpg",
-        "/brands/drifters/community.jpg"
+        "/brands/drifters/hero.png",
+        "/brands/drifters/instagram.jpg",
+        "/brands/drifters/ever-to-explore.jpeg",
+        "/brands/drifters/mary-claire.jpeg",
+        "/brands/drifters/3-shot.jpeg",
+        "/brands/drifters/blogs.png"
       ],
       metrics: {
         users: "250k+",
         revenue: "$3,500",
-        customLabel1: "Engagement",
-        customLabel2: "Total Revenue",
-        growth: "Campus Recognition",
-        partnerships: "Study Abroad + Accommodations"
+        customLabel1: "Blog Views",
+        customLabel2: "Merchandise Sales",
+        growth: "Campus Icon",
+        customLabel3: "Brand Recognition",
+        partnerships: "Global Partnerships",
+        customLabel4: "Study Abroad & Accommodations"
       },
       team: ["Founder & CEO"],
       timeline: [
