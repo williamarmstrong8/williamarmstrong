@@ -21,9 +21,7 @@ const Projects = () => {
       description: "Social media app concept that gamifies health challenges through photo-based task tracking and social accountability, featuring a working prototype built with Flutter.",
       longDescription: "Proof is a social media app concept I developed to address the challenge of maintaining accountability in health and wellness goals. The app gamifies health challenges by requiring users to post photos as proof of completing tasks, which are then shared in a social feed for friends to see and provide encouragement. This creates a system of social accountability that motivates users to stay consistent with their health goals. The project presented a great UI/UX challenge, requiring me to design an intuitive interface that balances social features with privacy considerations. I used Figma for design mockups and prototyping, then built a working prototype using Cursor and Flutter. The app addresses the common problem of people starting health challenges but losing motivation without accountability, providing a solution that combines social connection with goal achievement.",
       images: [
-        "/projects/proof/Untitled design.jpg",
-        "/projects/proof/Proof of Productive Habits.png",
-        "/projects/proof/ChatGPT Image Sep 30, 2025, 01_02_46 PM.png"
+        "/projects/proof/Untitled design.jpg"
       ],
       technologies: ["Figma", "Flutter", "Cursor", "UI/UX Design", "App Development", "Social Media Design"],
       features: [

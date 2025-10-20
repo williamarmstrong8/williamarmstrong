@@ -77,7 +77,7 @@ const FeaturedProjectsCard = () => {
               key={index}
               onClick={() => navigate('/projects')}
               className={cn(
-                "flex items-center space-x-3 py-2.5 px-3 rounded-xl bg-card/60 backdrop-blur-sm border border-border/40 transition-all duration-300 cursor-pointer group/item",
+                "flex items-center space-x-3 py-2.5 px-0 md:px-3 rounded-xl bg-card/60 backdrop-blur-sm border border-border/40 transition-all duration-300 cursor-pointer group/item",
                 index === projects.length - 1 && "mb-0"
               )}
               initial={{ opacity: 0, x: -20 }}
@@ -127,10 +127,11 @@ const FeaturedProjectsCard = () => {
 
       {/* Footer */}
       <motion.div 
-        className="mt-1 pt-1.5 border-t border-border/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        onClick={() => navigate('/projects')}
+        className="mt-1 pt-1.5 border-t border-border/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer hover:bg-accent/20 rounded-lg"
         initial={{ opacity: 0 }}
       >
-        <p className="text-xs text-muted-foreground text-center">
+        <p className="text-xs text-muted-foreground text-center py-1">
           View all projects →
         </p>
       </motion.div>

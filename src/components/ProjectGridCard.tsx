@@ -93,7 +93,7 @@ const ProjectGridCard = ({
       )}
 
       {/* Content Section */}
-      <div className="flex flex-col justify-between flex-1 p-6">
+      <div className="flex flex-col justify-between flex-1 px-3 md:px-6 py-6">
         <div className="flex-1">
           <div className="mb-3 flex items-center justify-between">
             <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
