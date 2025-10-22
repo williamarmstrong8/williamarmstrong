@@ -18,11 +18,16 @@ const FeaturedProjectsCard = () => {
       category: "UI/UX",
       image: "/projects/happy mile/Untitled design (1).jpg"
     },
-      {
-        title: "Automatic Remote-Controlled Projector System",
-        category: "Engineering",
-        image: "/projects/projector/projector1.jpg"
-      },
+    {
+      title: "Cora Fitness - Hybrid Athlete Brand",
+      category: "UI/UX",
+      image: "/projects/cora/runners.png"
+    },
+    {
+      title: "Automatic Remote-Controlled Projector System",
+      category: "Engineering",
+      image: "/projects/projector/projector1.jpg"
+    },
     {
       title: "Prosthetic Exoskeleton",
       category: "Biomedical",
@@ -32,11 +37,6 @@ const FeaturedProjectsCard = () => {
       title: "PWS Refrigeration",
       category: "Engineering",
       image: "/projects/PWS-fridge/pws1.jpg"
-    },
-    {
-      title: "Sustainable Upcycled Tables",
-      category: "Passion",
-      image: "/projects/table/table1.jpg"
     }
   ];
   

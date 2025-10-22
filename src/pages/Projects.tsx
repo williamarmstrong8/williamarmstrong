@@ -14,10 +14,63 @@ const Projects = () => {
   // Project data based on actual folders in public/projects - ordered by most recent date
   const projects = [
     {
+      id: 11,
+      title: "Cora Fitness - Hybrid Athlete Brand",
+      category: "UI/UX",
+      date: "October 2025",
+      description: "Comprehensive fitness brand demo targeting the hybrid athlete niche, showcasing expertise in web design, AI branding, marketing strategy, and business development.",
+      longDescription: "Cora is a demo fitness brand I created to demonstrate my comprehensive skills in web design, branding, AI powered design, marketing strategy, and business development. The brand targets the emerging hybrid athlete niche in the fitness industry, which focuses on athletes who train across multiple disciplines requiring both strength and endurance. The name 'Cora' derives from the concepts of strength and balance, which is visually emphasized through the brand's logo featuring a Roman column, symbolizing classical strength and structural stability. I utilized AI tools to create professional branding materials and realistic product demos, developing a complete brand identity from concept to execution. The project involved creating a fully functional website deployed on Vercel, designing a cohesive visual identity, developing marketing strategies for the hybrid athlete market, and creating product mockups that demonstrate real-world application. This project showcases my ability to develop a complete brand ecosystem while leveraging modern AI tools to enhance creative output and business strategy.",
+      images: [
+        "/projects/cora/runners.png",
+        "/projects/cora/site.png",
+        "/projects/cora/tri.png",
+        "/projects/cora/site2.png",
+        "/projects/cora/cloth.png"
+      ],
+      technologies: ["Web Design", "AI Branding", "Vercel", "Marketing Strategy", "Business Development", "Brand Identity", "Product Design", "UI/UX Design"],
+      features: [
+        "Complete brand identity development from concept to execution",
+        "AI-powered branding and product demo creation",
+        "Hybrid athlete market research and positioning",
+        "Roman column logo design emphasizing strength and balance",
+        "Full website design and development",
+        "Vercel deployment and hosting",
+        "Marketing strategy for niche fitness market",
+        "Product mockup and demonstration design",
+        "Business strategy and market analysis",
+        "Comprehensive brand ecosystem development"
+      ],
+      link: "https://corafitness.vercel.app/"
+    },
+    {
+      id: 10,
+      title: "Adviser GPT - Product Launch Video",
+      category: "UI/UX",
+      date: "July 2025",
+      description: "LinkedIn product launch video created for an AI internship, demonstrating creative translation of engineering and business visions into engaging visual storytelling using Adobe After Effects, Illustrator, and Premiere Pro.",
+      longDescription: "During my AI internship at Adviser GPT this summer, I created a professional product launch video that was posted on their LinkedIn and website to attract customers. This project required me to learn Adobe After Effects from scratch, while also utilizing Illustrator and Premiere Pro to create a fun, stylish, and modern demonstration of what the product does. The challenge was to take complex engineering and business visions and translate them into a creative, accessible format that would resonate with potential users. I developed a compelling visual narrative that showcased the product's capabilities in an engaging way, combining motion graphics, visual effects, and professional editing to create a polished final product. The video successfully brought the company's vision to life and served as a key marketing asset that drove customer engagement and product adoption.",
+      thumbnail: "/projects/adviser_gpt/linkedin_cover_photo.jpg",
+      videos: [
+        "/projects/adviser_gpt/Adviser_GPT_Answer_DEMO.mp4"
+      ],
+      technologies: ["Adobe After Effects", "Adobe Illustrator", "Adobe Premiere Pro", "Motion Graphics", "Video Editing", "Visual Storytelling"],
+      features: [
+        "Professional product launch video production",
+        "Self-taught Adobe After Effects proficiency",
+        "Motion graphics and visual effects design",
+        "Creative translation of technical concepts",
+        "Professional video editing and post-production",
+        "Marketing content creation for LinkedIn and website",
+        "Brand storytelling and product demonstration",
+        "Customer engagement and conversion-focused content"
+      ],
+      link: "https://www.linkedin.com/company/advisergpt/"
+    },
+    {
       id: 1,
       title: "Proof - Social Health Tracker",
       category: "UI/UX",
-      date: "December 2024",
+      date: "March 2025",
       description: "Social media app concept that gamifies health challenges through photo-based task tracking and social accountability, featuring a working prototype built with Flutter.",
       longDescription: "Proof is a social media app concept I developed to address the challenge of maintaining accountability in health and wellness goals. The app gamifies health challenges by requiring users to post photos as proof of completing tasks, which are then shared in a social feed for friends to see and provide encouragement. This creates a system of social accountability that motivates users to stay consistent with their health goals. The project presented a great UI/UX challenge, requiring me to design an intuitive interface that balances social features with privacy considerations. I used Figma for design mockups and prototyping, then built a working prototype using Cursor and Flutter. The app addresses the common problem of people starting health challenges but losing motivation without accountability, providing a solution that combines social connection with goal achievement.",
       images: [
@@ -56,30 +109,6 @@ const Projects = () => {
         "Motivational and goal-setting interfaces",
         "Mobile-first responsive design approach"
       ]
-    },
-    {
-      id: 10,
-      title: "Adviser GPT - Product Launch Video",
-      category: "UI/UX",
-      date: "August 2024",
-      description: "LinkedIn product launch video created for an AI internship, demonstrating creative translation of engineering and business visions into engaging visual storytelling using Adobe After Effects, Illustrator, and Premiere Pro.",
-      longDescription: "During my AI internship at Adviser GPT this summer, I created a professional product launch video that was posted on their LinkedIn and website to attract customers. This project required me to learn Adobe After Effects from scratch, while also utilizing Illustrator and Premiere Pro to create a fun, stylish, and modern demonstration of what the product does. The challenge was to take complex engineering and business visions and translate them into a creative, accessible format that would resonate with potential users. I developed a compelling visual narrative that showcased the product's capabilities in an engaging way, combining motion graphics, visual effects, and professional editing to create a polished final product. The video successfully brought the company's vision to life and served as a key marketing asset that drove customer engagement and product adoption.",
-      thumbnail: "/projects/adviser_gpt/linkedin_cover_photo.jpg",
-      videos: [
-        "/projects/adviser_gpt/Adviser_GPT_Answer_DEMO.mp4"
-      ],
-      technologies: ["Adobe After Effects", "Adobe Illustrator", "Adobe Premiere Pro", "Motion Graphics", "Video Editing", "Visual Storytelling"],
-      features: [
-        "Professional product launch video production",
-        "Self-taught Adobe After Effects proficiency",
-        "Motion graphics and visual effects design",
-        "Creative translation of technical concepts",
-        "Professional video editing and post-production",
-        "Marketing content creation for LinkedIn and website",
-        "Brand storytelling and product demonstration",
-        "Customer engagement and conversion-focused content"
-      ],
-      link: "https://www.linkedin.com/company/advisergpt/"
     },
     {
       id: 3,

@@ -33,16 +33,19 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
 
   useEffect(() => {
     if (isOpen) {
+      // Prevent scrolling on both html and body
+      document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
+      
+      return () => {
+        // Restore scrolling
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+      };
     } else {
-      document.body.style.overflow = 'unset';
       // Reset to first media item when modal closes
       setCurrentMediaIndex(0);
     }
-
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
   }, [isOpen]);
 
   useEffect(() => {

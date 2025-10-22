@@ -36,12 +36,22 @@ const ImageModal = ({
 
     if (isOpen) {
       document.addEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "hidden";
+      
+      // Prevent scrolling on both html and body
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+      
+      return () => {
+        document.removeEventListener("keydown", handleKeyDown);
+        
+        // Restore scrolling
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+      };
     }
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "unset";
     };
   }, [isOpen, onClose, onPrevious, onNext, hasPrevious, hasNext]);
 

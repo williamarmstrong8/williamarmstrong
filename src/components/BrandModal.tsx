@@ -43,15 +43,18 @@ const BrandModal = ({ isOpen, onClose, brand }: BrandModalProps) => {
 
   useEffect(() => {
     if (isOpen) {
+      // Prevent scrolling on both html and body
+      document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
+      
+      return () => {
+        // Restore scrolling
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+      };
     } else {
-      document.body.style.overflow = 'unset';
       setCurrentScreenshotIndex(0);
     }
-
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
   }, [isOpen]);
 
   // Load image aspect ratios
