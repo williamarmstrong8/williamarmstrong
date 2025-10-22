@@ -25,16 +25,16 @@ const ProjectsSection = () => {
       description: "Modern UI/UX redesign of my run club with an innovative app concept featuring contemporary design principles and user-centered interface development."
     },
     {
+      id: 11,
+      title: "Cora Fitness - Hybrid Athlete Brand",
+      category: "UI/UX",
+      description: "Comprehensive fitness brand demo targeting the hybrid athlete niche, showcasing expertise in web design, AI branding, marketing strategy, and business development."
+    },
+    {
       id: 3,
       title: "PWS Refrigeration System",
       category: "Engineering",
       description: "Human-centered engineering project developing a smart refrigeration system for individuals with Prader-Willi Syndrome to promote independence and safety."
-    },
-    {
-      id: 4,
-      title: "Waste Management and Sorting System",
-      category: "Engineering",
-      description: "Redesigned Boston College's waste system with an automated conveyor system that sorts trash, compost, and recycling to improve accessibility and user experience."
     }
   ];
 
