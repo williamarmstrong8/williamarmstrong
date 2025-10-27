@@ -9,19 +9,19 @@ const FeaturedProjectsCard = () => {
   
   const allProjects = [
     {
-      title: "Proof - Social Health Tracker",
-      category: "UI/UX",
-      image: "/projects/proof/Untitled design.jpg"
-    },
-    {
-      title: "Happy Mile - Run Club App",
-      category: "UI/UX",
-      image: "/projects/happy mile/Untitled design (1).jpg"
+      title: "AI Blog Generator",
+      category: "Engineering",
+      image: "/projects/AI Blog Generator/home.png"
     },
     {
       title: "Cora Fitness - Hybrid Athlete Brand",
       category: "UI/UX",
       image: "/projects/cora/runners.png"
+    },
+    {
+      title: "Proof - Social Health Tracker",
+      category: "UI/UX",
+      image: "/projects/proof/Untitled design.jpg"
     },
     {
       title: "Automatic Remote-Controlled Projector System",
@@ -43,9 +43,9 @@ const FeaturedProjectsCard = () => {
   // Show specific projects on mobile
   const projects = isMobile 
     ? allProjects.filter(project => 
+        project.title === "AI Blog Generator" ||
         project.title === "Proof - Social Health Tracker" ||
-        project.title === "Prosthetic Exoskeleton" ||
-        project.title === "Automatic Remote-Controlled Projector System"
+        project.title === "Prosthetic Exoskeleton"
       )
     : allProjects;
 

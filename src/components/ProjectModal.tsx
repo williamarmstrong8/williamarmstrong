@@ -148,17 +148,6 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
     const currentMediaWidth = mediaWidths[currentMediaIndex] || containerWidth;
     const currentMediaCenter = currentMediaPosition + (currentMediaWidth / 2);
     
-    // Debug logging
-    console.log('Navigation Debug:', {
-      currentMediaIndex,
-      totalMediaItems: mediaItems.length,
-      containerWidth,
-      mediaWidths,
-      mediaPositions,
-      currentMediaPosition,
-      currentMediaWidth,
-      currentMediaCenter
-    });
     
     // Special case for the first media item - align it to the left edge
     if (currentMediaIndex === 0) {
@@ -169,14 +158,12 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
     if (currentMediaIndex === mediaItems.length - 1) {
       const totalWidth = mediaPositions[mediaPositions.length - 1] + mediaWidths[mediaWidths.length - 1];
       const translateX = Math.max(0, totalWidth - containerWidth);
-      console.log('Last item transform:', { totalWidth, containerWidth, translateX });
       return `translateX(-${translateX}px)`;
     }
     
     // For all other media items, center them in the container
     const containerCenter = containerWidth / 2;
     const translateX = Math.max(0, currentMediaCenter - containerCenter);
-    console.log('Center transform:', { currentMediaCenter, containerCenter, translateX });
     
     return `translateX(-${translateX}px)`;
   };
