@@ -13,22 +13,22 @@ const ProjectsSection = () => {
   // Featured projects for the home page - 4 most recent projects in chronological order
   const featuredProjects = [
     {
-      id: 1,
-      title: "Proof - Social Health Tracker",
-      category: "UI/UX",
-      description: "Social media app concept that gamifies health challenges through photo-based task tracking and social accountability, featuring a working prototype built with Flutter."
-    },
-    {
-      id: 2,
-      title: "Happy Mile - Run Club App",
-      category: "UI/UX",
-      description: "Modern UI/UX redesign of my run club with an innovative app concept featuring contemporary design principles and user-centered interface development."
+      id: 12,
+      title: "AI Blog Generator",
+      category: "Engineering",
+      description: "AI-powered blog generation tool using OpenAI API to automate SEO-optimized content creation for companies and brands, featuring custom firm profiles and bulk generation capabilities."
     },
     {
       id: 11,
       title: "Cora Fitness - Hybrid Athlete Brand",
       category: "UI/UX",
       description: "Comprehensive fitness brand demo targeting the hybrid athlete niche, showcasing expertise in web design, AI branding, marketing strategy, and business development."
+    },
+    {
+      id: 1,
+      title: "Proof - Social Health Tracker",
+      category: "UI/UX",
+      description: "Social media app concept that gamifies health challenges through photo-based task tracking and social accountability, featuring a working prototype built with Flutter."
     },
     {
       id: 3,

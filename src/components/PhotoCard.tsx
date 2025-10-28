@@ -19,6 +19,7 @@ const PhotoCard = memo(({
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [isPreloading, setIsPreloading] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -32,8 +33,8 @@ const PhotoCard = memo(({
         }
       },
       { 
-        rootMargin: '50px', // Start loading 50px before the image comes into view
-        threshold: 0.1 
+        rootMargin: '200px', // Start loading 200px before the image comes into view
+        threshold: 0.01 // Lower threshold for earlier loading
       }
     );
 
@@ -43,6 +44,24 @@ const PhotoCard = memo(({
 
     return () => observer.disconnect();
   }, []);
+
+  // Preload image when in view
+  useEffect(() => {
+    if (isInView && image && !isLoaded && !hasError) {
+      setIsPreloading(true);
+      const img = new Image();
+      img.onload = () => {
+        setIsPreloading(false);
+        setIsLoaded(true);
+      };
+      img.onerror = () => {
+        setIsPreloading(false);
+        setHasError(true);
+        setIsLoaded(true);
+      };
+      img.src = image;
+    }
+  }, [isInView, image, isLoaded, hasError]);
 
   const handleImageLoad = () => {
     setIsLoaded(true);
@@ -74,8 +93,8 @@ const PhotoCard = memo(({
           }}
         >
           {/* Loading placeholder */}
-          {!isLoaded && (
-            <div className="w-full h-64 bg-gradient-to-br from-muted/30 to-muted/50 flex items-center justify-center rounded-2xl">
+          {(!isLoaded || isPreloading) && (
+            <div className="w-full h-32 bg-gradient-to-br from-muted/30 to-muted/50 flex items-center justify-center rounded-2xl">
               <div className="text-center opacity-60">
                 <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-muted-foreground/20 flex items-center justify-center animate-pulse">
                   <svg 
@@ -87,14 +106,16 @@ const PhotoCard = memo(({
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <p className="text-xs text-muted-foreground font-medium">Loading...</p>
+                <p className="text-xs text-muted-foreground font-medium">
+                  {isPreloading ? "Loading..." : "Loading..."}
+                </p>
               </div>
             </div>
           )}
 
           {/* Error state */}
           {hasError && (
-            <div className="w-full h-64 bg-gradient-to-br from-muted/30 to-muted/50 flex items-center justify-center rounded-2xl">
+            <div className="w-full h-32 bg-gradient-to-br from-muted/30 to-muted/50 flex items-center justify-center rounded-2xl">
               <div className="text-center opacity-60">
                 <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-red-500/20 flex items-center justify-center">
                   <svg 
@@ -112,19 +133,15 @@ const PhotoCard = memo(({
           )}
 
           {/* Actual image - only load when in view */}
-          {isInView && !hasError && (
+          {isInView && !hasError && isLoaded && (
             <img
               ref={imgRef}
               src={image}
               alt={title}
-              className={cn(
-                "w-full h-auto object-contain rounded-2xl transition-opacity duration-300",
-                isLoaded ? "opacity-100" : "opacity-0"
-              )}
-              onLoad={handleImageLoad}
-              onError={handleImageError}
-              loading="lazy"
+              className="w-full h-auto object-contain rounded-2xl transition-opacity duration-300 opacity-100"
+              loading="eager"
               decoding="async"
+              fetchPriority="high"
             />
           )}
 

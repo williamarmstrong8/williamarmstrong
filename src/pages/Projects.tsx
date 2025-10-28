@@ -14,6 +14,34 @@ const Projects = () => {
   // Project data based on actual folders in public/projects - ordered by most recent date
   const projects = [
     {
+      id: 12,
+      title: "AI Blog Generator",
+      category: "Engineering",
+      date: "November 2025",
+      description: "AI-powered blog generation tool using OpenAI API to automate SEO-optimized content creation for companies and brands, featuring custom firm profiles and bulk generation capabilities.",
+      longDescription: "I developed an AI blog generator that automates content creation for companies and brands to increase their SEO presence. The tool integrates with OpenAI's API to generate high-quality, SEO-optimized blog content tailored to each company's specific goals, identity, and market positioning. The system features sophisticated prompt engineering and custom firm profile creation, allowing for personalized content generation that aligns with each brand's unique voice and objectives. The platform supports both single blog post creation and parallel bulk generation, making it scalable for content marketing teams. Each generated blog is trained on SEO best practices and the specific market context of the target company, ensuring content that not only engages readers but also performs well in search rankings. The tool outputs MDX files that can be directly integrated into company websites, streamlining the content publishing workflow from generation to deployment.",
+      images: [
+        "/projects/AI Blog Generator/home.png",
+        "/projects/AI Blog Generator/history.png",
+        "/projects/AI Blog Generator/articles.png",
+        "/projects/AI Blog Generator/article.png"
+      ],
+      technologies: ["OpenAI API", "Python", "Prompt Engineering", "SEO Optimization", "MDX", "Content Generation", "Bulk Processing"],
+      features: [
+        "OpenAI API integration for content generation",
+        "Custom firm profile creation and management",
+        "SEO-optimized content generation",
+        "Prompt engineering for brand-specific content",
+        "Single and bulk blog generation capabilities",
+        "Market-specific content training",
+        "MDX file output for direct website integration",
+        "Automated content publishing workflow",
+        "Brand voice and identity customization",
+        "SEO best practices integration"
+      ],
+      link: "https://www.joinclubpack.com/blog"
+    },
+    {
       id: 11,
       title: "Cora Fitness - Hybrid Athlete Brand",
       category: "UI/UX",
