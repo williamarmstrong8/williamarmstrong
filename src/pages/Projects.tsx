@@ -38,7 +38,8 @@ const Projects = () => {
         "Automated content publishing workflow",
         "Brand voice and identity customization",
         "SEO best practices integration"
-      ]
+      ],
+      link: "https://www.joinclubpack.com/blog"
     },
     {
       id: 11,

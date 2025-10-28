@@ -11,7 +11,7 @@ const Photography = () => {
   const isMobile = useIsMobile();
   const [selectedCollection, setSelectedCollection] = useState("all");
   const [modalImage, setModalImage] = useState<{ src: string; title: string; index: number } | null>(null);
-  const [visibleCount, setVisibleCount] = useState(20); // Start with 20 images
+  const [visibleCount, setVisibleCount] = useState(40); // Start with 40 images for faster initial load
   const [columnHeights, setColumnHeights] = useState<number[]>([0, 0, 0, 0]);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -178,13 +178,13 @@ const Photography = () => {
   };
 
   const loadMorePhotos = () => {
-    setVisibleCount(prev => Math.min(prev + 20, currentPhotos.length));
+    setVisibleCount(prev => Math.min(prev + 40, currentPhotos.length));
   };
 
   // Reset visible count when collection changes
   const handleCollectionChange = (collectionId: string) => {
     setSelectedCollection(collectionId);
-    setVisibleCount(20);
+    setVisibleCount(40);
     setColumnHeights([0, 0, 0, 0]);
   };
 

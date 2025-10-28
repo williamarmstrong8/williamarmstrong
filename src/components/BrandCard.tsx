@@ -125,39 +125,28 @@ const BrandCard = ({
         </div>
       )}
 
-      {/* Footer with website link */}
-      <div className="pt-4 border-t border-border/50">
-        <div className="flex items-center justify-between">
-          {website ? (
+      {/* Footer with buttons */}
+      <div className="pt-4">
+        <div className="flex gap-3">
+          {website && (
             <a 
               href={website} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-sm text-primary hover:text-primary/80 transition-colors flex items-center space-x-2"
+              className="flex items-center gap-2 px-4 py-3 bg-card border border-border rounded-xl hover:bg-accent/5 transition-colors text-sm font-medium"
             >
-              <span>Visit Website</span>
-              <svg 
-                className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
+              <span>View Website</span>
             </a>
-          ) : (
-            <span className="text-sm text-muted-foreground">Coming Soon</span>
           )}
-          <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-            <svg 
-              className="w-4 h-4 text-primary group-hover:translate-x-0.5 transition-transform" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </div>
+          <button 
+            onClick={onClick}
+            className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors py-3 px-4 rounded-xl font-medium text-center group-hover:scale-[1.02] transition-transform"
+          >
+            Learn More
+          </button>
         </div>
       </div>
     </div>

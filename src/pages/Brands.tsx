@@ -67,7 +67,7 @@ const Brands = () => {
         "/brands/modbrew/rain.jpeg",
         "/brands/modbrew/shop.jpeg",
         "/brands/modbrew/window.jpeg",
-        "/brands/modbrew/Screenshot 2025-10-12 at 9.51.59 AM.png"
+        "/brands/modbrew/hub.png"
       ],
       metrics: {
         users: "1000+",

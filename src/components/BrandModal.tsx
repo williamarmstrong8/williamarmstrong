@@ -27,7 +27,6 @@ interface BrandModalProps {
       customLabel3?: string;
       customLabel4?: string;
     };
-    team?: string[];
     timeline?: {
       year: string;
       milestone: string;
@@ -384,36 +383,21 @@ const BrandModal = ({ isOpen, onClose, brand }: BrandModalProps) => {
                   </div>
                 )}
 
-                {/* Team */}
-                {brand.team && brand.team.length > 0 && (
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground mb-4">Team</h3>
-                    <div className="space-y-2">
-                      {brand.team.map((member, index) => (
-                        <div key={index} className="text-muted-foreground">
-                          {member}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
 
 
-                {/* Website Link */}
+                {/* Action Button */}
                 {brand.website && (
                   <div>
                     <a
                       href={brand.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 p-4 bg-card border border-border rounded-xl hover:bg-accent/5 transition-colors"
+                      className="w-full flex items-center justify-center gap-3 p-4 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-colors font-medium"
                     >
-                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                      </div>
-                      <span className="text-foreground font-medium">Visit Website</span>
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      <span>Visit Website</span>
                     </a>
                   </div>
                 )}
