@@ -14,7 +14,7 @@ const Navigation = () => {
     { name: "About", path: "/about" },
     { name: "Projects", path: "/projects" },
     { name: "Brands", path: "/brands" },
-    { name: "Photography", path: "/photography" }
+    { name: "Photography", path: "/photography-masonry" }
   ];
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);

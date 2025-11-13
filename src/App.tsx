@@ -8,10 +8,10 @@ import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
-import Photography from "./pages/Photography";
 import Brands from "./pages/Brands";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import PhotographyMasonry from "./pages/PhotographyMasonry";
 
 const queryClient = new QueryClient();
 
@@ -27,7 +27,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/photography" element={<Photography />} />
+            <Route path="/photography-masonry" element={<PhotographyMasonry />} />
             <Route path="/brands" element={<Brands />} />
             <Route path="/contact" element={<Contact />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
