@@ -11,7 +11,7 @@ const FeaturedProjectsCard = () => {
     {
       title: "AI Blog Generator",
       category: "Engineering",
-      image: "/projects/AI Blog Generator/home.png"
+      image: "/projects/AI Blog Generator/articles.png"
     },
     {
       title: "Cora Fitness - Hybrid Athlete Brand",
@@ -26,7 +26,7 @@ const FeaturedProjectsCard = () => {
     {
       title: "Automatic Remote-Controlled Projector System",
       category: "Engineering",
-      image: "/projects/projector/projector1.jpg"
+      image: "/projects/projector/projector11.jpg"
     },
     {
       title: "Prosthetic Exoskeleton",
