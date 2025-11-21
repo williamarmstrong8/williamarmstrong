@@ -52,7 +52,7 @@ const FeaturedProjectsCard = () => {
   return (
     <motion.div
       className={cn(
-        "bg-project-card backdrop-blur-md border border-project-card-border rounded-3xl px-3 md:px-6 pt-6 pb-3 transition-all duration-300 ease-out group",
+        "bg-project-card backdrop-blur-md border border-project-card-border rounded-3xl px-3 md:px-6 pt-6 pb-1 md:pb-3 transition-all duration-300 ease-out group",
         "flex flex-col justify-between h-full",
         "shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]",
         ""
