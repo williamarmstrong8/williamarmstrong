@@ -21,9 +21,9 @@ const Projects = () => {
       description: "AI-powered blog generation tool using OpenAI API to automate SEO-optimized content creation for companies and brands, featuring custom firm profiles and bulk generation capabilities.",
       longDescription: "I developed an AI blog generator that automates content creation for companies and brands to increase their SEO presence. The tool integrates with OpenAI's API to generate high-quality, SEO-optimized blog content tailored to each company's specific goals, identity, and market positioning. The system features sophisticated prompt engineering and custom firm profile creation, allowing for personalized content generation that aligns with each brand's unique voice and objectives. The platform supports both single blog post creation and parallel bulk generation, making it scalable for content marketing teams. Each generated blog is trained on SEO best practices and the specific market context of the target company, ensuring content that not only engages readers but also performs well in search rankings. The tool outputs MDX files that can be directly integrated into company websites, streamlining the content publishing workflow from generation to deployment.",
       images: [
+        "/projects/AI Blog Generator/articles.png",
         "/projects/AI Blog Generator/home.png",
         "/projects/AI Blog Generator/history.png",
-        "/projects/AI Blog Generator/articles.png",
         "/projects/AI Blog Generator/article.png"
       ],
       technologies: ["OpenAI API", "Python", "Prompt Engineering", "SEO Optimization", "MDX", "Content Generation", "Bulk Processing"],
@@ -312,6 +312,7 @@ const Projects = () => {
       description: "My introduction to engineering design - an automatic remote-controlled projector system that adjusts height for perfect wall display, solving a real-world problem through integrated mechanical and electronic systems.",
       longDescription: "This project marked my introduction to engineering design and problem-solving. I built an automatic remote-controlled projector system that would control the height of a projector to perfectly display on my wall. This was my first experience using engineering principles to solve a personal problem I was facing. The project required me to learn circuit design, mechanical design principles, and how to create collapsing and moving integrated systems. I utilized 3D CAD design software to model the mechanical components and implemented DC motor and motor controller designs to achieve precise height adjustment. This foundational project taught me the fundamentals of engineering design, from identifying a problem to developing a complete solution that integrated multiple engineering disciplines.",
       images: [
+        "/projects/projector/projector11.jpg",
         "/projects/projector/projector1.jpg",
         "/projects/projector/projector2.jpg",
         "/projects/projector/projector3.jpg",
@@ -321,8 +322,7 @@ const Projects = () => {
         "/projects/projector/projector7.jpg",
         "/projects/projector/projector8.jpg",
         "/projects/projector/projector9.jpg",
-        "/projects/projector/projector10.jpg",
-        "/projects/projector/projector11.jpg"
+        "/projects/projector/projector10.jpg"
       ],
       technologies: ["3D CAD Design", "DC Motors", "Motor Controllers", "Circuit Design", "Mechanical Design", "Remote Control Systems"],
       features: [

@@ -18,7 +18,7 @@ const HeroSection = () => {
       >
         <h2 className={`font-bold text-foreground leading-none ${
           isMobile 
-            ? 'text-6xl' 
+            ? 'text-4xl' 
             : 'text-6xl md:text-8xl lg:text-9xl'
         }`}>
           Always Creating

@@ -220,7 +220,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                 ) : (
                   <div className="relative rounded-2xl overflow-hidden bg-muted">
                     {/* Media Viewport Container */}
-                    <div ref={containerRef} className="h-[250px] sm:h-[400px] md:h-[600px] overflow-hidden">
+                    <div ref={containerRef} className="h-[600px] overflow-hidden">
                       {/* Media Carousel */}
                       <div 
                         className="flex transition-transform duration-300 ease-in-out h-full"
