@@ -21,7 +21,7 @@ const FeaturedProjectsCard = () => {
     {
       title: "Proof - Social Health Tracker",
       category: "UI/UX",
-      image: "/projects/proof/Untitled design.jpg"
+      image: "/projects/proof/1.jpg"
     },
     {
       title: "Automatic Remote-Controlled Projector System",
