@@ -95,6 +95,33 @@ const Projects = () => {
       link: "https://www.linkedin.com/company/advisergpt/"
     },
     {
+      id: 13,
+      title: "Sort It Out - Client Web App",
+      category: "Engineering",
+      date: "June 2025",
+      description: "Professional website built for a client's organizing business, taking the project from concept to completion. A paid product that demonstrates my ability to monetize technical skills and deliver client-focused solutions.",
+      longDescription: "Sort It Out is a professional website I built for a client's organizing business, representing my first successful monetization of technical skills. This project took me through the complete product lifecycle from 0 to 1, working directly with a client to understand their business needs and deliver a polished, production-ready web application. I used React and TypeScript to build this web app alongside Cursor AI, demonstrating my ability to leverage modern development tools and AI assistance to deliver high-quality results efficiently. This project showcases my client-facing capabilities, from initial consultation through iterative development and final deployment. The success of this project has led to ongoing recommendations and has positioned me to seek additional clients for web app development. This experience demonstrates not just technical proficiency, but also the ability to understand client needs, communicate effectively, and deliver products that meet business objectives.",
+      images: [
+        "/projects/sort_it_out/home.png",
+        "/projects/sort_it_out/2.png",
+        "/projects/sort_it_out/3.png",
+        "/projects/sort_it_out/4.png",
+        "/projects/sort_it_out/5.png"
+      ],
+      technologies: ["React", "TypeScript", "Cursor AI", "Web Development", "Client Services", "Product Development"],
+      features: [
+        "Complete product lifecycle from concept to deployment",
+        "Client-focused web application development",
+        "React and TypeScript implementation",
+        "AI-assisted development workflow with Cursor",
+        "Professional client communication and iteration",
+        "Production-ready deployment",
+        "Business-focused solution delivery",
+        "Monetized technical skills successfully"
+      ],
+      link: "https://www.sortitoutsf.com/"
+    },
+    {
       id: 1,
       title: "Proof - Social Health Tracker",
       category: "UI/UX",
@@ -102,7 +129,13 @@ const Projects = () => {
       description: "Social media app concept that gamifies health challenges through photo-based task tracking and social accountability, featuring a working prototype built with Flutter.",
       longDescription: "Proof is a social media app concept I developed to address the challenge of maintaining accountability in health and wellness goals. The app gamifies health challenges by requiring users to post photos as proof of completing tasks, which are then shared in a social feed for friends to see and provide encouragement. This creates a system of social accountability that motivates users to stay consistent with their health goals. The project presented a great UI/UX challenge, requiring me to design an intuitive interface that balances social features with privacy considerations. I used Figma for design mockups and prototyping, then built a working prototype using Cursor and Flutter. The app addresses the common problem of people starting health challenges but losing motivation without accountability, providing a solution that combines social connection with goal achievement.",
       images: [
-        "/projects/proof/Untitled design.jpg"
+        "/projects/proof/1.jpg",
+        "/projects/proof/2.jpg",
+        "/projects/proof/3.jpg",
+        "/projects/proof/4.jpg",
+        "/projects/proof/5.jpg",
+        "/projects/proof/6.jpg",
+        "/projects/proof/7.jpg"
       ],
       technologies: ["Figma", "Flutter", "Cursor", "UI/UX Design", "App Development", "Social Media Design"],
       features: [
