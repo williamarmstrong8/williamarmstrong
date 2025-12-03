@@ -9,11 +9,6 @@ const FeaturedProjectsCard = () => {
   
   const allProjects = [
     {
-      title: "Sort It Out - Client Web App",
-      category: "Engineering",
-      image: "/projects/sort_it_out/home.png"
-    },
-    {
       title: "AI Blog Generator",
       category: "Engineering",
       image: "/projects/AI Blog Generator/articles.png"
