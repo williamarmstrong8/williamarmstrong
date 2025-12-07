@@ -418,33 +418,42 @@ const Projects = () => {
         </motion.section>
 
         {/* Filter Section */}
-        <section className={`flex ${isMobile ? 'justify-center' : 'justify-end'} mb-12`}>
+        <motion.section 
+          className={`flex ${isMobile ? 'justify-center' : 'justify-end'} mb-12`}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 0.5, 
+            ease: [0.25, 0.46, 0.45, 0.94],
+            delay: 0.4
+          }}
+        >
           <ProjectFilter 
             activeFilter={activeFilter}
             onFilterChange={setActiveFilter}
           />
-        </section>
+        </motion.section>
 
         {/* Projects Grid */}
         <motion.section 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8"
-          layout
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ 
+            duration: 0.3,
+            delay: 0.6
+          }}
         >
           <AnimatePresence mode="wait">
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
-                layout
-                initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                animate={{ 
-                  opacity: 1, 
-                  y: 0, 
-                  scale: 1,
-                  transition: {
-                    duration: 0.4,
-                    delay: index * 0.1,
-                    ease: [0.25, 0.46, 0.45, 0.94]
-                  }
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.7 + (index * 0.15),
+                  ease: [0.25, 0.46, 0.45, 0.94]
                 }}
                 exit={{ 
                   opacity: 0, 
@@ -456,8 +465,8 @@ const Projects = () => {
                   }
                 }}
                 whileHover={{ 
-                  y: -4,
-                  transition: { duration: 0.2 }
+                  y: -8,
+                  transition: { duration: 0.3 }
                 }}
               >
                 <ProjectGridCard

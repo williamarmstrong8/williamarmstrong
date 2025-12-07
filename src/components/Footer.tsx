@@ -2,9 +2,11 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Footer = () => {
   const { theme } = useTheme();
+  const isMobile = useIsMobile();
 
   const quickLinks = [
     { name: "About", path: "/about" },
@@ -15,8 +17,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-card/50 backdrop-blur-md border-t border-border/50 mt-20">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 py-16">
+    <footer className={`bg-card/50 backdrop-blur-md border-t border-border/50 mt-20 py-16 ${isMobile ? 'px-4' : 'px-20'}`}>
+      <div className="w-full">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand Section */}
