@@ -9,7 +9,7 @@ const HeroSection = () => {
   const isMobile = useIsMobile();
 
   return (
-    <main className={`min-h-screen ${isMobile ? 'px-4 pt-8 pb-16' : 'px-20 py-16'}`}>
+    <main className={`min-h-screen ${isMobile ? 'px-4 pt-4 pb-16' : 'px-20 pt-8 pb-16'}`}>
       <motion.section 
         className={`text-center ${isMobile ? 'mb-12' : 'mb-12'}`}
         initial={{ opacity: 0, y: 30 }}

@@ -58,7 +58,7 @@ const PhotoGridCard = ({ className, size = "medium" }: PhotoGridCardProps) => {
       )}>
         {photos.map((photo, index) => (
            <motion.div
-             key={photo.alt}
+             key={`${photo.src}-${index}`}
              className="relative overflow-hidden cursor-pointer group/photo rounded-lg"
              initial={{ opacity: 0, scale: 0.8, y: 20 }}
              animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -70,7 +70,7 @@ const PhotoGridCard = ({ className, size = "medium" }: PhotoGridCardProps) => {
              whileHover={{ 
                scale: 1.02
              }}
-             onClick={() => navigate('/photography')}
+             onClick={() => navigate('/photography-masonry')}
            >
             {/* Photo content */}
             <div className="relative w-full h-full overflow-hidden">
