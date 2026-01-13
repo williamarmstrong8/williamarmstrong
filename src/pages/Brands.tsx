@@ -11,7 +11,7 @@ type Brand = {
   logo: string;
   description: string;
   category: string;
-  status: "Active" | "Launched" | "In Beta";
+  status: "Active" | "Launched" | "In Beta" | "In Funding";
   website?: string;
   founded?: string;
   longDescription?: string;
@@ -91,7 +91,7 @@ const Brands = () => {
       logo: "/clubpack_logo.svg",
       description: "A SaaS platform that solves the fragmented software problem for social club founders. ClubPack centralizes everything needed to run a club - from event creation and RSVP management to custom websites and analytics - all in one place.",
       category: "Sports & Community",
-      status: "In Beta" as const,
+      status: "In Funding" as const,
       website: "https://www.joinclubpack.com/",
       founded: "2025",
       longDescription: "ClubPack was born from personal experience founding a run club and struggling with scattered, disconnected software tools. After experiencing the frustration of managing events, RSVPs, websites, and analytics across multiple platforms, I built ClubPack to centralize everything social club founders need. Within minutes, clubs can launch a custom branded website and publish their club's presence online. Partnering with a co-founder, we've automated outreach to college clubs nationwide and now have 25+ clubs actively trialing the platform. Built with my low-code experience and AI assistance, ClubPack is making it easier than ever to start and manage social clubs.",
@@ -111,9 +111,9 @@ const Brands = () => {
       ],
       metrics: {
         users: "25+",
-        revenue: "Beta Testing",
+        revenue: "$1,500",
         customLabel1: "Clubs Trialing",
-        customLabel2: "Current Stage",
+        customLabel2: "Funding Raised",
         growth: "Rapid Expansion",
         partnerships: "College Clubs"
       },
@@ -122,7 +122,8 @@ const Brands = () => {
         { year: "2025", milestone: "Founded run club and identified software fragmentation problem" },
         { year: "2025", milestone: "Built ClubPack platform using low-code experience and AI assistance" },
         { year: "2025", milestone: "Partnered with co-founder and automated college outreach" },
-        { year: "2025", milestone: "25+ clubs actively trialing platform, seeking funding for scale" }
+        { year: "2025", milestone: "25+ clubs actively trialing platform, seeking funding for scale" },
+        { year: "2025", milestone: "Secured $1,500 funding from Shea Accelerator Program" }
       ]
     },
     {

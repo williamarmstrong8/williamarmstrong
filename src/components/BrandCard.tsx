@@ -6,7 +6,7 @@ interface BrandCardProps {
   logo: string;
   description: string;
   category: string;
-  status: "Active" | "Launched" | "In Beta";
+  status: "Active" | "Launched" | "In Beta" | "In Funding";
   website?: string;
   founded?: string;
   className?: string;
@@ -43,6 +43,8 @@ const BrandCard = ({
         return "text-blue-500";
       case "In Beta":
         return "text-yellow-500";
+      case "In Funding":
+        return "text-purple-500";
       default:
         return "text-muted-foreground";
     }

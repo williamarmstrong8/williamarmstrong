@@ -10,7 +10,7 @@ interface BrandModalProps {
     logo: string;
     description: string;
     category: string;
-    status: "Active" | "Launched" | "In Beta";
+    status: "Active" | "Launched" | "In Beta" | "In Funding";
     website?: string;
     founded?: string;
     longDescription?: string;
@@ -108,6 +108,8 @@ const BrandModal = ({ isOpen, onClose, brand }: BrandModalProps) => {
         return "bg-blue-500/10 text-blue-500 border-blue-500/20";
       case "In Beta":
         return "bg-yellow-500/10 text-yellow-500 border-yellow-500/20";
+      case "In Funding":
+        return "bg-purple-500/10 text-purple-500 border-purple-500/20";
       default:
         return "bg-muted text-muted-foreground border-border";
     }
